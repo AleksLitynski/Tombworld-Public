@@ -1,0 +1,124 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://menus/game_over_menu.gd" type="Script" id=1]
+[ext_resource path="res://ui/Silver.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.22, 0.0748, 0.0748, 0.901961 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 128
+outline_size = 4
+outline_color = Color( 0.67451, 0.196078, 0.196078, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=3]
+default_font = SubResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 86
+outline_size = 3
+outline_color = Color( 0.67451, 0.196078, 0.196078, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=5]
+default_font = SubResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[node name="game_over_menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buttons" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 7
+size_flags_vertical = 3
+custom_constants/margin_right = 30
+custom_constants/margin_top = 30
+custom_constants/margin_left = 30
+custom_constants/margin_bottom = 30
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="buttons"]
+margin_left = 30.0
+margin_top = 30.0
+margin_right = 1170.0
+margin_bottom = 870.0
+custom_constants/separation = 30
+
+[node name="game_over" type="Label" parent="buttons/VBoxContainer"]
+margin_right = 1140.0
+margin_bottom = 142.0
+theme = SubResource( 3 )
+text = "Game Over"
+align = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReloadSave" type="Button" parent="buttons/VBoxContainer"]
+margin_top = 172.0
+margin_right = 297.0
+margin_bottom = 274.0
+size_flags_horizontal = 2
+theme = SubResource( 5 )
+custom_styles/focus = SubResource( 6 )
+custom_colors/font_color_hover = Color( 0.67451, 0.196078, 0.196078, 1 )
+text = "Reload Save"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GotoMainMenu" type="Button" parent="buttons/VBoxContainer"]
+margin_top = 304.0
+margin_right = 243.0
+margin_bottom = 406.0
+size_flags_horizontal = 2
+theme = SubResource( 5 )
+custom_styles/focus = SubResource( 6 )
+custom_colors/font_color_hover = Color( 0.67451, 0.196078, 0.196078, 1 )
+text = "Main Menu"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitGame" type="Button" parent="buttons/VBoxContainer"]
+margin_top = 436.0
+margin_right = 248.0
+margin_bottom = 538.0
+size_flags_horizontal = 2
+theme = SubResource( 5 )
+custom_styles/focus = SubResource( 6 )
+custom_colors/font_color_hover = Color( 0.67451, 0.196078, 0.196078, 1 )
+text = "Quit Game"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="buttons/VBoxContainer/ReloadSave" to="." method="_on_ReloadSave_pressed"]
+[connection signal="pressed" from="buttons/VBoxContainer/GotoMainMenu" to="." method="_on_GotoMainMenu_pressed"]
+[connection signal="pressed" from="buttons/VBoxContainer/QuitGame" to="." method="_on_QuitGame_pressed"]

@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/tiles/spawn_textures/singles/red_clean.png" type="Texture" id=1]
+[ext_resource path="res://entities/button.gd" type="Script" id=2]
+[ext_resource path="res://assets/tiles/spawn_textures/singles/machine.png" type="Texture" id=3]
+[ext_resource path="res://utils/text_3d.tscn" type="PackedScene" id=4]
+
+[sub_resource type="CylinderMesh" id=1]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.15
+radial_segments = 6
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 1 )
+emission_enabled = true
+emission = Color( 0.498039, 0.113725, 0.894118, 1 )
+emission_energy = 5.0
+emission_operator = 1
+emission_on_uv2 = false
+uv1_scale = Vector3( 5, 5, 5 )
+uv1_triplanar = true
+
+[sub_resource type="CylinderShape" id=3]
+resource_name = "head"
+radius = 0.231193
+height = 0.392187
+
+[sub_resource type="CubeMesh" id=4]
+size = Vector3( 0.1, 0.1, 1 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_texture = ExtResource( 3 )
+uv1_scale = Vector3( 5, 5, 5 )
+uv1_triplanar = true
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 0.0519807, 0.407953, 0.0577279 )
+
+[node name="button" type="StaticBody"]
+script = ExtResource( 2 )
+
+[node name="button" type="StaticBody" parent="."]
+
+[node name="CallButton" type="MeshInstance" parent="button" groups=[
+"elevator_call_button",
+]]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.973455, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="head" type="CollisionShape" parent="button"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.973455, 0 )
+shape = SubResource( 3 )
+
+[node name="post" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.509089, -0.103757 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="body" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.426915, -0.101868 )
+shape = SubResource( 6 )
+
+[node name="text_3d" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.004076, -0.543433, -0.0068748 )
+text = "[E to call elevator]"
+color = Color( 0.67451, 0.196078, 0.196078, 1 )
+size = 128
+billboard_size = Vector2( 2000, 2000 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.53394, 0 )
+light_color = Color( 0.933333, 0.337255, 0.337255, 1 )
+light_energy = 2.0
+spot_range = 3.16965
+spot_angle = 28.9024

@@ -1,0 +1,185 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://assets/models/to_gordon.gltf" type="PackedScene" id=1]
+[ext_resource path="res://entities/doors/simple_door.tscn" type="PackedScene" id=2]
+[ext_resource path="res://entities/doors/doorway.tscn" type="PackedScene" id=3]
+[ext_resource path="res://entities/enter_the_labs_platform.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/models/small-cube.gltf" type="PackedScene" id=5]
+[ext_resource path="res://assets/models/pillar_1.gltf" type="PackedScene" id=6]
+[ext_resource path="res://stages/enter_the_labs_stage.gd" type="Script" id=7]
+[ext_resource path="res://entities/filler/cloud.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/tiles/water_tile.png" type="Texture" id=9]
+[ext_resource path="res://entities/hex_circle.tscn" type="PackedScene" id=10]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 5, 11.4908, 22.8884 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 1.68987, 1.20587, 0.842603 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 3.15951, 3.29295, 1.91354 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 3.55638, 0.265013, 3.76289 )
+
+[sub_resource type="Animation" id=5]
+resource_name = "move_platforms"
+length = 11.0
+loop = true
+tracks/0/type = "transform"
+tracks/0/path = NodePath("props/platform")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, -2.42678, 2.70434, 1.3367, 0, 0, 0, 1, 1, 1, 1, 0.5, 1, -0.746326, 2.70434, 1.3367, 0, 0, 0, 1, 1, 1, 1, 8.5, 1, -0.746326, 2.70434, 1.3367, 0, 0, 0, 1, 1, 1, 1, 9.5, 1, -2.42678, 2.70434, 1.3367, 0, 0, 0, 1, 1, 1, 1 )
+tracks/1/type = "transform"
+tracks/1/path = NodePath("props/platform2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = PoolRealArray( 0.5, 1, 6.62201, 5.89663, 1.51477, 0, 1, 0, -1.62921e-07, 1, 1, 1, 1, 1, 4.97781, 5.89663, 1.51477, 0, 1, 0, -1.62921e-07, 1, 1, 1, 8.5, 1, 4.97781, 5.89663, 1.51477, 0, 1, 0, -1.62921e-07, 1, 1, 1, 9.5, 1, 6.62201, 5.89663, 1.51477, 0, 1, 0, -1.62921e-07, 1, 1, 1 )
+tracks/2/type = "transform"
+tracks/2/path = NodePath("props/platform3")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = PoolRealArray( 1, 1, -2.38224, 7.26305, 10.5503, 0, 0, 0, 1, 1, 1, 1, 1.5, 1, -0.867989, 7.26305, 10.5503, 0, 0, 0, 1, 1, 1, 1, 8.5, 1, -0.867989, 7.26305, 10.5503, 0, 0, 0, 1, 1, 1, 1, 9.5, 1, -2.38224, 7.26305, 10.5503, 0, 0, 0, 1, 1, 1, 1 )
+tracks/3/type = "transform"
+tracks/3/path = NodePath("props/platform4")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = PoolRealArray( 1.5, 1, 6.62704, 8.31592, 13.4499, 0, 1, 0, -1.62921e-07, 1, 1, 1, 2, 1, 5.19072, 8.31592, 13.4499, 0, 1, 0, -1.62921e-07, 1, 1, 1, 8.5, 1, 5.19072, 8.31592, 13.4499, 0, 1, 0, -1.62921e-07, 1, 1, 1, 9.5, 1, 6.62704, 8.31592, 13.4499, 0, 1, 0, -1.62921e-07, 1, 1, 1 )
+tracks/4/type = "transform"
+tracks/4/path = NodePath("props/platform5")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = PoolRealArray( 2, 1, 6.64256, 10.6691, 8.64566, 0, 1, 0, -1.62921e-07, 1, 1, 1, 2.5, 1, 5.38578, 10.6691, 8.64566, 0, 1, 0, -1.62921e-07, 1, 1, 1, 8.5, 1, 5.38578, 10.6691, 8.64566, 0, 1, 0, -1.62921e-07, 1, 1, 1, 9.5, 1, 6.64256, 10.6691, 8.64566, 0, 1, 0, -1.62921e-07, 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=6]
+flags_transparent = true
+params_depth_draw_mode = 1
+albedo_color = Color( 1, 1, 1, 0.588235 )
+albedo_texture = ExtResource( 9 )
+uv1_scale = Vector3( 3, 3, 3 )
+uv1_triplanar = true
+
+[node name="testing_stage" type="Spatial"]
+script = ExtResource( 7 )
+
+[node name="default_spawn" type="Spatial" parent="." groups=[
+"default_spawn",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6618, -17.8097 )
+
+[node name="to_gordon" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.395, 1.27875, 25.3913 )
+
+[node name="lights" type="Spatial" parent="."]
+transform = Transform( 0.992768, 2.05565e-08, -0.12005, 0.117049, 0.222195, 0.967951, 0.0266746, -0.975002, 0.220588, 2.37744, 32.9437, 9.51969 )
+
+[node name="DirectionalLight" type="SpotLight" parent="lights"]
+transform = Transform( 1, -3.72529e-09, -6.51926e-09, -1.86265e-09, 1, 0, 0, 0, 1, 0, 0, 0 )
+light_color = Color( 0.972549, 0.952941, 0.647059, 1 )
+shadow_enabled = true
+spot_range = 59.3457
+
+[node name="DirectionalLight2" type="SpotLight" parent="lights"]
+transform = Transform( 1, -2.98023e-08, 9.31323e-10, 2.6077e-08, 0.841699, 0.539946, -2.14204e-08, -0.539946, 0.841699, -4.76837e-07, 22.1455, -10.7676 )
+light_color = Color( 0.972549, 0.952941, 0.647059, 1 )
+shadow_enabled = true
+spot_range = 52.938
+
+[node name="stage_volume" type="Area" parent="." groups=[
+"stage_volume",
+]]
+
+[node name="CollisionShape" type="CollisionShape" parent="stage_volume"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13438, 11.8044, -0.182291 )
+shape = SubResource( 1 )
+
+[node name="doors" type="Spatial" parent="."]
+
+[node name="to_lair" parent="doors" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.26734, 14.6707, -22.7695 )
+target_stage_name = "the_gorgons_lair"
+door_name = "bridge_to_lair"
+
+[node name="CollisionShape" type="CollisionShape" parent="doors/to_lair"]
+transform = Transform( 1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 0.0109196, 0.965145, -0.72415 )
+shape = SubResource( 2 )
+
+[node name="simple_door" parent="doors/to_lair" instance=ExtResource( 2 )]
+
+[node name="to_pillars" parent="doors" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.278979, 0.840704, 22.3284 )
+target_stage_name = "entryway/fallen_pillars"
+door_name = "pillars_to_bridge"
+
+[node name="CollisionShape" type="CollisionShape" parent="doors/to_pillars"]
+transform = Transform( 1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 1.27791, 0.965145, -1.77239 )
+shape = SubResource( 3 )
+
+[node name="simple_door" parent="doors/to_pillars" instance=ExtResource( 2 )]
+
+[node name="props" type="Spatial" parent="."]
+
+[node name="platform" parent="props" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.42678, 2.70434, 1.3367 )
+
+[node name="platform2" parent="props" instance=ExtResource( 4 )]
+transform = Transform( -1, 0, -3.25842e-07, 0, 1, 0, 3.25842e-07, 0, -1, 6.62201, 5.89663, 1.51477 )
+
+[node name="platform3" parent="props" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38224, 7.26305, 10.5503 )
+
+[node name="platform4" parent="props" instance=ExtResource( 4 )]
+transform = Transform( -1, 0, -3.25842e-07, 0, 1, 0, 3.25842e-07, 0, -1, 6.62704, 8.31592, 13.4499 )
+
+[node name="platform5" parent="props" instance=ExtResource( 4 )]
+transform = Transform( -1, 0, -3.25842e-07, 0, 1, 0, 3.25842e-07, 0, -1, 6.64256, 10.6691, 8.64566 )
+
+[node name="small-cube" parent="props" instance=ExtResource( 5 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 1.84833, 10.4911, 0.0511417 )
+
+[node name="pillar_1" parent="props" instance=ExtResource( 6 )]
+transform = Transform( 0.546807, 0.0429143, 0.00445242, -0.0502182, 0.320609, 0.325024, 0.0313017, -0.235305, 0.443666, -5.79532, 15.0686, -4.18936 )
+
+[node name="StaticBody" type="StaticBody" parent="props"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13438, 11.8044, -0.182291 )
+
+[node name="CollisionShape" type="CollisionShape" parent="props/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 0.966488, 0.256711, 0, -0.256711, 0.966488, -0.0499008, 9.53056, -11.514 )
+shape = SubResource( 4 )
+
+[node name="StaticBody2" type="StaticBody" parent="props"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13438, 11.8044, -0.182291 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="props/StaticBody2"]
+transform = Transform( 1, -2.14432e-08, -2.52819e-10, 2.07895e-08, 0.972272, -0.233853, 5.26037e-09, 0.233853, 0.972272, 0.242108, 9.63545, 6.94776 )
+shape = SubResource( 4 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 0.972771, -0.199451, 0.118054, 0.152476, 0.934333, 0.322138, -0.174553, -0.295366, 0.939303, 0.939374, 17.3116, -12.0194 )
+spot_range = 13.4042
+spot_angle = 33.0966
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/move_platforms = SubResource( 5 )
+
+[node name="cloud" parent="." instance=ExtResource( 8 )]
+transform = Transform( 15.2037, 0, 0, 0, 15.2037, 0, 0, 0, 15.2037, 8.58784, 26.5694, 26.0527 )
+
+[node name="cloud2" parent="." instance=ExtResource( 8 )]
+transform = Transform( 15.2037, 0, 0, 0, 15.2037, 0, 0, 0, 15.2037, -3.40749, 31.6326, 15.1094 )
+
+[node name="puddle" parent="." instance=ExtResource( 10 )]
+transform = Transform( 6.48937, 0, 0, 0, 1, 0, 0, 0, 6.48937, 4.12419, 0.639192, 3.16294 )
+material = SubResource( 6 )

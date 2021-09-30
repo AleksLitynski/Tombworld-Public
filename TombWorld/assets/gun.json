@@ -1,0 +1,22 @@
+{ "frames": [
+   {
+    "filename": "gun.aseprite",
+    "frame": { "x": 0, "y": 0, "w": 164, "h": 145 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 164, "h": 145 },
+    "sourceSize": { "w": 164, "h": 145 },
+    "duration": 100
+   }
+ ],
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.2.28-x64",
+  "image": "gun.png",
+  "format": "RGBA8888",
+  "size": { "w": 164, "h": 145 },
+  "scale": "1",
+  "frameTags": [
+  ]
+ }
+}

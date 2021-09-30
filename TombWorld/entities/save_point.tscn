@@ -1,0 +1,116 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/models/spawn_point.gltf" type="PackedScene" id=1]
+[ext_resource path="res://utils/text_3d.tscn" type="PackedScene" id=2]
+[ext_resource path="res://entities/save_point.gd" type="Script" id=3]
+[ext_resource path="res://audio/save.ogg" type="AudioStream" id=4]
+[ext_resource path="res://utils/dialog_tag.tscn" type="PackedScene" id=5]
+
+[sub_resource type="CylinderShape" id=1]
+radius = 0.735208
+height = 2.99625
+
+[sub_resource type="Animation" id=2]
+length = 4.0
+loop = true
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.3, 0.51, 0.61, 1.65, 1.84, 1.94 ),
+"transitions": PoolRealArray( -2, -2, -2, -2, -2, -2, -2, -2 ),
+"update": 0,
+"values": [ 2.0, 0.0, 2.0, 0.0, 2.0, 2.0, 0.0, 2.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:light_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.478431, 0.952941, 0.588235, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 1.25
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:light_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2, 1.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.478431, 0.952941, 0.588235, 1 ), Color( 0.478431, 0.85098, 0.952941, 1 ), Color( 0.72549, 0.478431, 0.952941, 1 ), Color( 0.952941, 0.478431, 0.921569, 1 ), Color( 0.952941, 0.137255, 0.215686, 1 ), Color( 0.945098, 0.54902, 0.333333, 1 ), Color( 0.882353, 0.74902, 0.223529, 1 ), Color( 0.458824, 0.882353, 0.223529, 1 ), Color( 0.223529, 0.882353, 0.698039, 1 ), Color( 0.223529, 0.482353, 0.882353, 1 ), Color( 0.768627, 0.223529, 0.882353, 1 ), Color( 0.882353, 0.223529, 0.454902, 1 ), Color( 0.882353, 0.223529, 0.223529, 1 ), Color( 0.882353, 0.392157, 0.223529, 1 ), Color( 0.784314, 0.882353, 0.223529, 1 ), Color( 0.443137, 0.882353, 0.223529, 1 ), Color( 0.223529, 0.882353, 0.803922, 1 ), Color( 0.662745, 0.223529, 0.882353, 1 ), Color( 0.882353, 0.223529, 0.607843, 1 ), Color( 0.882353, 0.223529, 0.623529, 1 ), Color( 0.882353, 0.223529, 0.223529, 1 ), Color( 0.882353, 0.486275, 0.223529, 1 ), Color( 0.847059, 0.882353, 0.223529, 1 ), Color( 0.584314, 0.882353, 0.223529, 1 ), Color( 0.223529, 0.882353, 0.619608, 1 ), Color( 0.478431, 0.952941, 0.588235, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 1.15, 1.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 2.0, 4.0, 4.0, 2.0 ]
+}
+
+[node name="save_point" type="Spatial" groups=[
+"save_point",
+]]
+script = ExtResource( 3 )
+
+[node name="spawn_point" type="Spatial" parent="." groups=[
+"spawn_point",
+]]
+transform = Transform( 0.837127, 0, -0.547008, 0, 1, 0, 0.547008, 0, 0.837127, -1.6351, 0.196168, 1.67845 )
+
+[node name="StaticBody" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.52542, 0 )
+shape = SubResource( 1 )
+
+[node name="dialog_tag" parent="StaticBody" instance=ExtResource( 5 )]
+tag = "Save Point"
+
+[node name="ship" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.326735, 0 )
+
+[node name="OmniLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.0376961, 3.84061, 0.235029 )
+light_color = Color( 0.478431, 0.952941, 0.588235, 1 )
+light_energy = 0.0
+shadow_enabled = true
+shadow_bias = 0.3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="OmniLight"]
+autoplay = "blink"
+anims/blink = SubResource( 2 )
+anims/save = SubResource( 3 )
+
+[node name="text_3d" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.72072, 0 )
+text = "[E to Save]"
+size = 128
+billboard_size = Vector2( 2000, 2000 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.13392, 0 )
+stream = ExtResource( 4 )
+unit_db = 50.0
+unit_size = 50.0
+max_db = 6.0

@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://entities/hex_circle.gd" type="Script" id=1]
+[ext_resource path="res://assets/models/hex-circle.gltf" type="PackedScene" id=2]
+[ext_resource path="res://assets/tiles/water_tile.png" type="Texture" id=3]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+params_depth_draw_mode = 1
+albedo_color = Color( 1, 1, 1, 0.588235 )
+albedo_texture = ExtResource( 3 )
+uv1_scale = Vector3( 3, 3, 3 )
+uv1_triplanar = true
+
+[node name="hex_circle" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+material = SubResource( 1 )
+
+[node name="hex_circle" parent="." index="0"]
+material_override = SubResource( 1 )

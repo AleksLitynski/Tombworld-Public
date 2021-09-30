@@ -1,0 +1,293 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://ui/volume.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ui/Silver.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://menus/pause_menu.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 128
+outline_size = 4
+outline_color = Color( 0.67451, 0.196078, 0.196078, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 86
+outline_size = 3
+outline_color = Color( 0.67451, 0.196078, 0.196078, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=4]
+default_font = SubResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 64
+outline_size = 4
+outline_color = Color( 0.67451, 0.196078, 0.196078, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=7]
+default_font = SubResource( 6 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 64
+outline_size = 4
+outline_color = Color( 0.67451, 0.196078, 0.196078, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=9]
+default_font = SubResource( 8 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 64
+outline_size = 4
+outline_color = Color( 0.67451, 0.196078, 0.196078, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=11]
+default_font = SubResource( 10 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 64
+outline_size = 2
+outline_color = Color( 0.67451, 0.196078, 0.196078, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=13]
+default_font = SubResource( 12 )
+
+[node name="pause_menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.23, 0.2116, 0.2116, 0.784314 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buttons" type="MarginContainer" parent="HBoxContainer"]
+margin_right = 598.0
+margin_bottom = 900.0
+size_flags_horizontal = 7
+size_flags_vertical = 3
+custom_constants/margin_right = 30
+custom_constants/margin_top = 30
+custom_constants/margin_left = 30
+custom_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/buttons"]
+margin_left = 30.0
+margin_top = 30.0
+margin_right = 568.0
+margin_bottom = 870.0
+custom_constants/separation = 20
+
+[node name="Paused" type="Label" parent="HBoxContainer/buttons/VBoxContainer"]
+margin_right = 538.0
+margin_bottom = 142.0
+theme = SubResource( 2 )
+text = "Paused"
+align = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Continue" type="Button" parent="HBoxContainer/buttons/VBoxContainer"]
+margin_top = 162.0
+margin_right = 220.0
+margin_bottom = 264.0
+size_flags_horizontal = 2
+theme = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_colors/font_color_hover = Color( 0.67451, 0.196078, 0.196078, 1 )
+custom_colors/font_color_pressed = Color( 0.215686, 0.0823529, 0.0823529, 1 )
+text = "Continue"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReloadSave" type="Button" parent="HBoxContainer/buttons/VBoxContainer"]
+margin_top = 284.0
+margin_right = 297.0
+margin_bottom = 386.0
+size_flags_horizontal = 2
+theme = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_colors/font_color_hover = Color( 0.67451, 0.196078, 0.196078, 1 )
+custom_colors/font_color_pressed = Color( 0.215686, 0.0823529, 0.0823529, 1 )
+text = "Reload Save"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GotoMainMenu" type="Button" parent="HBoxContainer/buttons/VBoxContainer"]
+margin_top = 406.0
+margin_right = 243.0
+margin_bottom = 508.0
+size_flags_horizontal = 2
+theme = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_colors/font_color_hover = Color( 0.67451, 0.196078, 0.196078, 1 )
+custom_colors/font_color_pressed = Color( 0.215686, 0.0823529, 0.0823529, 1 )
+text = "Main Menu"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitGame" type="Button" parent="HBoxContainer/buttons/VBoxContainer"]
+margin_top = 528.0
+margin_right = 248.0
+margin_bottom = 630.0
+size_flags_horizontal = 2
+theme = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_colors/font_color_hover = Color( 0.67451, 0.196078, 0.196078, 1 )
+custom_colors/font_color_pressed = Color( 0.215686, 0.0823529, 0.0823529, 1 )
+text = "Quit Game"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="volume" parent="HBoxContainer/buttons/VBoxContainer" instance=ExtResource( 1 )]
+margin_top = 650.0
+margin_right = 500.0
+margin_bottom = 677.0
+rect_min_size = Vector2( 500, 0 )
+size_flags_horizontal = 0
+
+[node name="logs" type="MarginContainer" parent="HBoxContainer"]
+margin_left = 602.0
+margin_right = 1200.0
+margin_bottom = 900.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 30
+custom_constants/margin_top = 30
+custom_constants/margin_left = 30
+custom_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/logs"]
+margin_left = 30.0
+margin_top = 30.0
+margin_right = 568.0
+margin_bottom = 870.0
+
+[node name="Logs" type="Label" parent="HBoxContainer/logs/VBoxContainer"]
+margin_right = 538.0
+margin_bottom = 72.0
+theme = SubResource( 7 )
+text = "Logs:"
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LogList" type="ScrollContainer" parent="HBoxContainer/logs/VBoxContainer"]
+margin_top = 76.0
+margin_right = 538.0
+margin_bottom = 604.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="logs" type="VBoxContainer" parent="HBoxContainer/logs/VBoxContainer/LogList"]
+margin_right = 538.0
+size_flags_horizontal = 3
+
+[node name="Guns" type="VBoxContainer" parent="HBoxContainer/logs/VBoxContainer"]
+margin_top = 608.0
+margin_right = 538.0
+margin_bottom = 684.0
+
+[node name="Guns" type="Label" parent="HBoxContainer/logs/VBoxContainer/Guns"]
+margin_right = 538.0
+margin_bottom = 72.0
+theme = SubResource( 9 )
+text = "Guns:"
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gun_list" type="HBoxContainer" parent="HBoxContainer/logs/VBoxContainer/Guns"]
+margin_top = 76.0
+margin_right = 538.0
+margin_bottom = 76.0
+custom_constants/separation = -10
+
+[node name="Actions" type="VBoxContainer" parent="HBoxContainer/logs/VBoxContainer"]
+margin_top = 688.0
+margin_right = 538.0
+margin_bottom = 764.0
+
+[node name="Actions" type="Label" parent="HBoxContainer/logs/VBoxContainer/Actions"]
+margin_right = 538.0
+margin_bottom = 72.0
+theme = SubResource( 11 )
+text = "Actions:"
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="action_list" type="HBoxContainer" parent="HBoxContainer/logs/VBoxContainer/Actions"]
+margin_top = 76.0
+margin_right = 538.0
+margin_bottom = 76.0
+custom_constants/separation = -10
+
+[node name="Stats" type="HBoxContainer" parent="HBoxContainer/logs/VBoxContainer"]
+margin_top = 768.0
+margin_right = 538.0
+margin_bottom = 840.0
+
+[node name="Tanks" type="Label" parent="HBoxContainer/logs/VBoxContainer/Stats"]
+margin_right = 267.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+theme = SubResource( 13 )
+text = "Tanks: 0"
+
+[node name="Artifacts" type="Label" parent="HBoxContainer/logs/VBoxContainer/Stats"]
+margin_left = 271.0
+margin_right = 538.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+theme = SubResource( 13 )
+text = "Artifacts: 0"
+
+[connection signal="pressed" from="HBoxContainer/buttons/VBoxContainer/Continue" to="." method="_on_Continue_pressed"]
+[connection signal="pressed" from="HBoxContainer/buttons/VBoxContainer/ReloadSave" to="." method="_on_ReloadSave_pressed"]
+[connection signal="pressed" from="HBoxContainer/buttons/VBoxContainer/GotoMainMenu" to="." method="_on_GotoMainMenu_pressed"]
+[connection signal="pressed" from="HBoxContainer/buttons/VBoxContainer/QuitGame" to="." method="_on_QuitGame_pressed"]

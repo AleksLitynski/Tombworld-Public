@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://entities/four_color_source.gd" type="Script" id=1]
+
+[sub_resource type="ParticlesMaterial" id=1]
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 0.75
+direction = Vector3( 0, 1, 0 )
+spread = 5.0
+flatness = 1.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 1.0
+linear_accel = 3.0
+color = Color( 0.156863, 0.835294, 0.313726, 1 )
+hue_variation = 0.1
+hue_variation_random = 0.5
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_unshaded = true
+flags_use_point_size = true
+vertex_color_use_as_albedo = true
+params_point_size = 5.0
+params_billboard_mode = 2
+
+[sub_resource type="PointMesh" id=3]
+material = SubResource( 2 )
+
+[node name="four_color_source" type="Particles"]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0 )
+amount = 100
+lifetime = 2.0
+randomness = 1.0
+process_material = SubResource( 1 )
+draw_pass_1 = SubResource( 3 )
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}

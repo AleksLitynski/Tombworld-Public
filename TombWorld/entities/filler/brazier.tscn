@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="BoxShape" id=1]
+
+[node name="Spatial" type="StaticBody"]
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 0.491867, 0, 0, 0, 0.0691324, 0, 0, 0, 0.491867, 0, 0.0344977, 0 )
+
+[node name="CSGBox2" type="CSGBox" parent="."]
+transform = Transform( 0.187814, 0, 0, 0, 0.444207, 0, 0, 0, 0.187814, 0, 0.530483, 0 )
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.34503, 0 )
+omni_range = 15.0
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0.199843, 0, 0, 0, 0.488126, 0, 0, 0, 0.199843, 0, 0.456631, 0 )
+shape = SubResource( 1 )

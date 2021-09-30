@@ -1,0 +1,79 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://ui/debug.tscn" type="PackedScene" id=1]
+[ext_resource path="res://main.gd" type="Script" id=2]
+[ext_resource path="res://ui/dialog.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ui/stats/stats_ui.tscn" type="PackedScene" id=4]
+[ext_resource path="res://utils/music.gd" type="Script" id=5]
+
+[node name="Main" type="Node" groups=[
+"main_root",
+"saveable",
+]]
+pause_mode = 2
+script = ExtResource( 2 )
+
+[node name="Game" type="Spatial" parent="." groups=[
+"game_root",
+]]
+pause_mode = 1
+
+[node name="Common" type="Spatial" parent="." groups=[
+"common_root",
+]]
+pause_mode = 1
+
+[node name="GunsOverlay" type="Control" parent="." groups=[
+"guns_root",
+]]
+pause_mode = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StatsUi" parent="." instance=ExtResource( 4 )]
+pause_mode = 1
+
+[node name="Menu" type="Control" parent="." groups=[
+"menu_root",
+]]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dialog" parent="." groups=[
+"dialog_viewer",
+] instance=ExtResource( 3 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -600.0
+margin_top = -450.0
+margin_right = 600.0
+margin_bottom = 450.0
+
+[node name="Debug" parent="." groups=[
+"debug_root",
+] instance=ExtResource( 1 )]
+pause_mode = 2
+margin_top = 2.2449
+margin_bottom = 2.24487
+
+[node name="Utils" type="Node" parent="." groups=[
+"utils_root",
+]]
+pause_mode = 2
+
+[node name="music" type="AudioStreamPlayer" parent="." groups=[
+"music",
+]]
+script = ExtResource( 5 )
+
+[connection signal="finished" from="music" to="music" method="_on_music_finished"]

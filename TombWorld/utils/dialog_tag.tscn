@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://utils/dialog_tag.gd" type="Script" id=1]
+
+[node name="dialog_tag" type="Node" groups=[
+"scan_tag",
+]]
+script = ExtResource( 1 )

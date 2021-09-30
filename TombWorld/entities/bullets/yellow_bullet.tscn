@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/bullets/yellow_bullet.aseprite" type="SpriteFrames" id=1]
+[ext_resource path="res://entities/bullets/yellow_bullet.gd" type="Script" id=2]
+[ext_resource path="res://entities/facing_sprite.gd" type="Script" id=3]
+
+[sub_resource type="CapsuleShape" id=1]
+
+[node name="yellow_bullet" type="KinematicBody" groups=[
+"bullet",
+]]
+collision_layer = 2
+script = ExtResource( 2 )
+
+[node name="sprite" type="AnimatedSprite3D" parent="."]
+billboard = 2
+frames = ExtResource( 1 )
+animation = "back"
+script = ExtResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.28, 0, 0, 0 )
+shape = SubResource( 1 )

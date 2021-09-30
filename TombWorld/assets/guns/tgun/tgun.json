@@ -1,0 +1,22 @@
+{ "frames": [
+   {
+    "filename": "tgun.aseprite",
+    "frame": { "x": 0, "y": 0, "w": 200, "h": 150 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 200, "h": 150 },
+    "sourceSize": { "w": 200, "h": 150 },
+    "duration": 100
+   }
+ ],
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.2.28-x64",
+  "image": "tgun.png",
+  "format": "RGBA8888",
+  "size": { "w": 200, "h": 150 },
+  "scale": "1",
+  "frameTags": [
+  ]
+ }
+}

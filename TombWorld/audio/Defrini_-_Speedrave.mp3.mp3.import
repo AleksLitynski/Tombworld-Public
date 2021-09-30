@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Defrini_-_Speedrave.mp3.mp3-021ca1ba17f9acbc5e8b6c47bf878864.mp3str"
+
+[deps]
+
+source_file="res://audio/Defrini_-_Speedrave.mp3.mp3"
+dest_files=[ "res://.import/Defrini_-_Speedrave.mp3.mp3-021ca1ba17f9acbc5e8b6c47bf878864.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,185 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://addons/scatter/src/core/scatter.gd" type="Script" id=1]
+[ext_resource path="res://addons/scatter/src/core/scatter_item.gd" type="Script" id=2]
+[ext_resource path="res://assets/models/level.gltf" type="PackedScene" id=3]
+[ext_resource path="res://assets/tiles/water_tile.png" type="Texture" id=4]
+[ext_resource path="res://assets/entities/grass.png" type="Texture" id=5]
+[ext_resource path="res://entities/vines.tscn" type="PackedScene" id=6]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 12.9906, 3.65548, 20.2991 )
+
+[sub_resource type="PlaneMesh" id=2]
+
+[sub_resource type="PlaneMesh" id=3]
+size = Vector2( 6, 6 )
+
+[sub_resource type="SpatialMaterial" id=4]
+flags_transparent = true
+params_depth_draw_mode = 1
+albedo_color = Color( 1, 1, 1, 0.819608 )
+albedo_texture = ExtResource( 4 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=5]
+flags_transparent = true
+params_depth_draw_mode = 1
+albedo_color = Color( 0, 0, 0, 0.901961 )
+albedo_texture = ExtResource( 4 )
+uv1_triplanar = true
+
+[sub_resource type="Curve3D" id=6]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -6.50122, 0.746245, 116.298, 0, 0, 0, 0, 0, 0, -5.70387, 0.746246, 118.085, 0, 0, 0, 0, 0, 0, -4.08726, 0.746244, 120.831, 0, 0, 0, 0, 0, 0, -1.03294, 0.746241, 120.874, 0, 0, 0, 0, 0, 0, 1.54492, 0.74624, 118.719, 0, 0, 0, 0, 0, 0, 4.20072, 0.746244, 115.463, 0, 0, 0, 0, 0, 0, 1.20098, 0.721027, 110.007, 0, 0, 0, 0, 0, 0, -6.67103, 0.746245, 112.128, 0, 0, 0, 0, 0, 0, -6.91692, 0.746244, 114.342, 0, 0, 0, 0, 0, 0, -6.87519, 0.746246, 115.465, 0, 0, 0, 0, 0, 0, -6.50122, 0.746245, 116.298 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+}
+
+[sub_resource type="SpatialMaterial" id=7]
+flags_unshaded = true
+flags_do_not_receive_shadows = true
+params_cull_mode = 2
+params_use_alpha_scissor = true
+params_alpha_scissor_threshold = 0.9
+albedo_texture = ExtResource( 5 )
+
+[sub_resource type="QuadMesh" id=8]
+material = SubResource( 7 )
+
+[sub_resource type="MultiMesh" id=9]
+transform_format = 1
+mesh = SubResource( 8 )
+
+[node name="tileset_testing_stage" type="Spatial"]
+
+[node name="default_spawn" type="Spatial" parent="." groups=[
+"default_spawn",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.836809, 1.87166, -5.29461 )
+
+[node name="stage_volume" type="Area" parent="." groups=[
+"stage_volume",
+]]
+
+[node name="CollisionShape" type="CollisionShape" parent="stage_volume"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2035, 2.99956, 11.2703 )
+shape = SubResource( 1 )
+
+[node name="Navigation" type="Navigation" parent="." groups=[
+"stage_nav",
+]]
+
+[node name="level" parent="Navigation" instance=ExtResource( 3 )]
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5264, 9.27215, 10.5874 )
+light_color = Color( 0.964706, 0.901961, 0.247059, 1 )
+light_energy = 0.8
+shadow_enabled = true
+omni_range = 181.885
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7431, -1.52153, 5.5104 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Spatial" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.64267, 2.05844, 13.9253 )
+
+[node name="vines" parent="Spatial" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.77099 )
+
+[node name="vines2" parent="Spatial" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.03547, 0, 2.77099 )
+
+[node name="vines3" parent="Spatial" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0272, 0, 2.77099 )
+
+[node name="vines4" parent="Spatial" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.01892, 0, 2.77099 )
+
+[node name="vines5" parent="Spatial" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.02523, 0, 2.77099 )
+
+[node name="vines6" parent="Spatial" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.98345 )
+
+[node name="vines7" parent="Spatial" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.03547, 0, 1.98345 )
+
+[node name="vines8" parent="Spatial" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0272, 0, 1.98345 )
+
+[node name="vines9" parent="Spatial" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.01892, 0, 1.98345 )
+
+[node name="vines10" parent="Spatial" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.02523, 0, 1.98345 )
+
+[node name="vines11" parent="Spatial" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.03548 )
+
+[node name="vines12" parent="Spatial" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.03547, 0, 1.03548 )
+
+[node name="vines13" parent="Spatial" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0272, 0, 1.03548 )
+
+[node name="vines14" parent="Spatial" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.01892, 0, 1.03548 )
+
+[node name="vines15" parent="Spatial" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.02523, 0, 1.03548 )
+
+[node name="vines16" parent="Spatial" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="vines17" parent="Spatial" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.03547, 0, 0 )
+
+[node name="vines18" parent="Spatial" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0272, 0, 0 )
+
+[node name="vines19" parent="Spatial" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.01892, 0, 0 )
+
+[node name="vines20" parent="Spatial" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.02523, 0, 0 )
+
+[node name="water" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.56116, -0.606751, 0 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
+
+[node name="water2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.56116, -0.875642, 0 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 5 )
+
+[node name="vines_scatter" type="Path" parent="."]
+curve = SubResource( 6 )
+script = ExtResource( 1 )
+modifier_stack = Object(Node,"_import_path":NodePath(""),"pause_mode":0,"process_priority":0,"script":Resource( "res://addons/scatter/src/core/modifier_stack.gd" ),"stack":[ Object(Node,"_import_path":NodePath(""),"pause_mode":0,"process_priority":0,"script":Resource( "res://addons/scatter/src/modifiers/distribute_inside_random.gd" ),"enabled":true,"display_name":"Distribute Inside (Random)","category":"Distribute","warning":"","warning_ignore_no_transforms":true,"warning_ignore_no_path":false,"override_global_seed":false,"custom_seed":0,"instance_count":500,"_rng":Object(RandomNumberGenerator,"seed":3910124579317344401,"state":8548462835231609628,"script":null)
+)
+, Object(Node,"_import_path":NodePath(""),"pause_mode":0,"process_priority":0,"script":Resource( "res://addons/scatter/src/modifiers/randomize_transforms.gd" ),"enabled":true,"display_name":"Randomize Transforms","category":"Edit","warning":"","warning_ignore_no_transforms":false,"warning_ignore_no_path":true,"override_global_seed":false,"custom_seed":0,"local_space":true,"position":Vector3( 1, 0, 1 ),"rotation":Vector3( 0, 360, 0 ),"scale":Vector3( 1, 1, 1 ),"_rng":Object(RandomNumberGenerator,"seed":-302040807144837129,"state":-115954724392568310,"script":null)
+)
+, Object(Node,"_import_path":NodePath(""),"pause_mode":0,"process_priority":0,"script":Resource( "res://addons/scatter/src/modifiers/project_on_floor.gd" ),"enabled":true,"display_name":"Project On Floor","category":"Edit","warning":"All the transforms have been removed. Possible reasons: 
+
+		+ There is no collider close enough to the path.
+		+ The Ray length is not long enough.
+		+ The floor direction is incorrect.
+		","warning_ignore_no_transforms":false,"warning_ignore_no_path":true,"ray_length":10.0,"ray_offset":8.0,"remove_points_on_miss":true,"align_with_floor_normal":false,"invert_ray_direction":false,"floor_direction":Vector3( 0, 1, 0 ),"max_slope":1.0,"mask":"1048575")
+ ],"just_created":false,"undo_redo":null)
+
+
+[node name="ScatterItem" type="Spatial" parent="vines_scatter"]
+script = ExtResource( 2 )
+item_path = "res://entities/grass.tscn"
+ignore_initial_position = false
+materials = [ SubResource( 7 ) ]
+
+[node name="MultiMeshInstance" type="MultiMeshInstance" parent="vines_scatter/ScatterItem"]
+multimesh = SubResource( 9 )
+
+[node name="vines20" parent="vines_scatter/ScatterItem" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.02523, 0, 0 )

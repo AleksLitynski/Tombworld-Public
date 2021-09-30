@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/tiles/white_tile_plain.png" type="Texture" id=1]
+[ext_resource path="res://entities/elevator/elevator.gd" type="Script" id=2]
+
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 0.0
+
+[sub_resource type="CylinderShape" id=2]
+radius = 0.981302
+height = 2.0689
+
+[sub_resource type="CylinderShape" id=3]
+radius = 0.981302
+height = 1.1257
+
+[sub_resource type="CylinderShape" id=4]
+radius = 0.0562036
+height = 0.543611
+
+[sub_resource type="CylinderMesh" id=5]
+height = 0.448
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_texture = ExtResource( 1 )
+uv1_scale = Vector3( 5, 5, 5 )
+uv1_triplanar = true
+
+[sub_resource type="CylinderShape" id=7]
+height = 0.519688
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="elevator" type="StaticBody" parent="." groups=[
+"elevator",
+]]
+visible = false
+physics_material_override = SubResource( 1 )
+
+[node name="on_elevator" type="Area" parent="elevator"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.204574, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="elevator/on_elevator"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.750273, 0 )
+shape = SubResource( 2 )
+
+[node name="bonk_zone" type="Area" parent="elevator"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.95242, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="elevator/bonk_zone"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19989, 0 )
+shape = SubResource( 3 )
+
+[node name="walk_on_trigger" type="Area" parent="elevator"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.204574, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="elevator/walk_on_trigger"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.210917, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="elevator"]
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="CollisionShape" type="CollisionShape" parent="elevator"]
+shape = SubResource( 7 )

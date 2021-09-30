@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/entities/cloud1.png" type="Texture" id=1]
+
+[node name="cloud" type="Spatial"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.438202, 0 )
+billboard = 2
+texture = ExtResource( 1 )

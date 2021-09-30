@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://ui/Silver.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://ui/lore_label.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_bottom = -10
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+content_margin_left = 10.0
+bg_color = Color( 0.776471, 0.211765, 0.211765, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.956863, 0.345098, 0.345098, 1 )
+corner_detail = 20
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id=4]
+content_margin_left = 10.0
+bg_color = Color( 0.603922, 0.294118, 0.294118, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.698039, 0.537255, 0.537255, 1 )
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id=5]
+content_margin_left = 10.0
+bg_color = Color( 0.47451, 0.0901961, 0.0901961, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.537255, 0.301961, 0.301961, 1 )
+corner_detail = 20
+shadow_size = 3
+
+[node name="LoreLabel" type="MarginContainer"]
+margin_right = 366.0
+margin_bottom = 50.0
+custom_constants/margin_right = 2
+custom_constants/margin_top = 2
+custom_constants/margin_left = 2
+custom_constants/margin_bottom = 3
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 364.0
+margin_bottom = 50.0
+theme = SubResource( 2 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "The truth about wombats"
+align = 0
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

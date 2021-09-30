@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/guns/colorgun/colorgun2.aseprite" type="SpriteFrames" id=1]
+[ext_resource path="res://guns/four_color.gd" type="Script" id=2]
+[ext_resource path="res://audio/sfx/four_color.wav" type="AudioStream" id=3]
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 1
+emission_sphere_radius = 0.65
+gravity = Vector3( 0, 0, 0 )
+radial_accel = -1.5
+hue_variation = 0.1
+hue_variation_random = 0.5
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_unshaded = true
+flags_use_point_size = true
+vertex_color_use_as_albedo = true
+params_point_size = 20.0
+
+[sub_resource type="PointMesh" id=3]
+material = SubResource( 2 )
+
+[node name="Four_Color" type="Node2D"]
+scale = Vector2( 6, 6 )
+script = ExtResource( 2 )
+
+[node name="gun_sprite" type="AnimatedSprite" parent="."]
+position = Vector2( -17.9797, -24.7221 )
+scale = Vector2( 1.13984, 1.16648 )
+frames = ExtResource( 1 )
+speed_scale = 0.2
+centered = false
+
+[node name="bullet_origin" type="Node2D" parent="."]
+position = Vector2( 121.434, 113.127 )
+
+[node name="Particles" type="Particles" parent="."]
+emitting = false
+amount = 75
+lifetime = 0.95
+one_shot = true
+explosiveness = 0.8
+process_material = SubResource( 1 )
+draw_pass_1 = SubResource( 3 )
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -5.0

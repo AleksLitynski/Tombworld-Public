@@ -1,0 +1,380 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/placeholder_textures/purple.tres" type="Material" id=1]
+[ext_resource path="res://entities/enemies/gordon.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/models/test-blender-stage.tscn" type="PackedScene" id=3]
+[ext_resource path="res://utils/text_3d.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/placeholder_textures/green.tres" type="Material" id=5]
+[ext_resource path="res://entities/enemies/mummy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://entities/enemies/heather.tscn" type="PackedScene" id=7]
+[ext_resource path="res://entities/save_point.tscn" type="PackedScene" id=8]
+[ext_resource path="res://entities/vendo.tscn" type="PackedScene" id=9]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 51, 18, 22 )
+
+[sub_resource type="NavigationMesh" id=2]
+vertices = PoolVector3Array( -2.57, 0.9, 19.7, -0.17, 0.9, 19.7, -0.17, 0.9, 14.3, -2.87, 0.9, 14, -16.37, 0.9, 20.3, -2.87, 0.9, 5.9, -2.87, 0.9, -1.9, -29.87, 0.9, -5.5, -29.87, 0.9, 0.799999, -2.87, 0.9, 20.3, -2.57, 0.9, 19.7, -2.87, 0.9, 14, -9.77, 0.9, 20.3, -2.57, 0.9, -29.8, -2.87, 0.9, -31.3, -9.77, 0.9, -31.3, -23.27, 0.9, -31.3, -29.87, 0.9, -31.3, -29.87, 0.9, -25, -29.87, 0.9, 13.7, -29.87, 0.9, 20.3, -23.27, 0.9, 20.3, -2.87, 0.9, -10, -2.87, 0.9, -17.8, -16.37, 0.9, -31.3, -0.17, 0.9, -18.1, -0.17, 0.9, -29.8, -2.57, 0.9, -29.8, -2.87, 0.9, -17.8, -0.17, 0.9, -18.1, -2.57, 0.9, -29.8, -9.77, 0.9, -31.3, -16.37, 0.9, -31.3, -2.87, 0.9, -10, -16.37, 0.9, -31.3, -29.87, 0.9, -12.1, -29.87, 0.9, -5.5, -2.87, 0.9, -1.9, -23.27, 0.9, -31.3, -29.87, 0.9, -25, -29.87, 0.9, -18.4, -29.87, 0.9, 7.4, -29.87, 0.9, 13.7, -23.27, 0.9, 20.3, -16.37, 0.9, 20.3, -9.77, 0.9, 20.3, -2.87, 0.9, 14, -2.87, 0.9, 5.9, -16.37, 0.9, -31.3, -23.27, 0.9, -31.3, -29.87, 0.9, -18.4, -29.87, 0.9, -12.1, -29.87, 0.9, 7.4, -23.27, 0.9, 20.3, -16.37, 0.9, 20.3, -29.87, 0.9, 0.799999, -0.17, 0.9, 14.3, -0.17, 0.9, 19.7, 2.53, 0.9, 19.7, 2.83, 0.9, 14, 14.83, 0.9, 20.3, 27.13, 0.9, 7.4, 27.13, 0.9, 0.799999, 2.83, 0.9, 14, 2.53, 0.9, 19.7, 2.83, 0.9, 20.3, 14.83, 0.9, 20.3, 27.13, 0.9, -25, 27.13, 0.9, -31.3, 20.83, 0.9, -31.3, 20.83, 0.9, 20.3, 27.13, 0.9, 20.3, 27.13, 0.9, 13.7, 2.53, 0.9, -29.8, -0.17, 0.9, -29.8, -0.17, 0.9, -18.1, 2.83, 0.9, -17.8, 27.13, 0.9, -12.1, 27.13, 0.9, -18.4, 14.83, 0.9, -31.3, 2.83, 0.9, -17.8, 2.83, 0.9, -10, 14.83, 0.9, -31.3, 2.83, 0.9, -31.3, 2.53, 0.9, -29.8, 2.83, 0.9, -17.8, 2.83, 0.9, 5.9, 2.83, 0.9, 14, 14.83, 0.9, 20.3, 27.13, 0.9, -25, 20.83, 0.9, -31.3, 14.83, 0.9, -31.3, 27.13, 0.9, -18.4, 14.83, 0.9, 20.3, 20.83, 0.9, 20.3, 27.13, 0.9, 13.7, 27.13, 0.9, 7.4, 2.83, 0.9, -1.9, 2.83, 0.9, 5.9, 14.83, 0.9, 20.3, 27.13, 0.9, 0.799999, 27.13, 0.9, -5.5, 27.13, 0.9, -5.5, 27.13, 0.9, -12.1, 2.83, 0.9, -10, 2.83, 0.9, -1.9 )
+polygons = [ PoolIntArray( 1, 0, 2 ), PoolIntArray( 2, 0, 3 ), PoolIntArray( 5, 4, 6 ), PoolIntArray( 6, 4, 8 ), PoolIntArray( 6, 8, 7 ), PoolIntArray( 10, 9, 11 ), PoolIntArray( 11, 9, 12 ), PoolIntArray( 15, 14, 13 ), PoolIntArray( 18, 17, 16 ), PoolIntArray( 21, 20, 19 ), PoolIntArray( 24, 23, 22 ), PoolIntArray( 25, 27, 26 ), PoolIntArray( 29, 28, 30 ), PoolIntArray( 30, 28, 31 ), PoolIntArray( 31, 28, 32 ), PoolIntArray( 35, 34, 36 ), PoolIntArray( 36, 34, 33 ), PoolIntArray( 36, 33, 37 ), PoolIntArray( 38, 40, 39 ), PoolIntArray( 43, 42, 41 ), PoolIntArray( 45, 44, 46 ), PoolIntArray( 46, 44, 47 ), PoolIntArray( 49, 48, 50 ), PoolIntArray( 50, 48, 51 ), PoolIntArray( 53, 52, 54 ), PoolIntArray( 54, 52, 55 ), PoolIntArray( 57, 56, 58 ), PoolIntArray( 58, 56, 59 ), PoolIntArray( 60, 62, 61 ), PoolIntArray( 64, 63, 65 ), PoolIntArray( 65, 63, 66 ), PoolIntArray( 69, 68, 67 ), PoolIntArray( 72, 71, 70 ), PoolIntArray( 74, 73, 75 ), PoolIntArray( 75, 73, 76 ), PoolIntArray( 78, 77, 79 ), PoolIntArray( 79, 77, 80 ), PoolIntArray( 80, 77, 81 ), PoolIntArray( 83, 82, 84 ), PoolIntArray( 84, 82, 85 ), PoolIntArray( 88, 87, 86 ), PoolIntArray( 90, 89, 91 ), PoolIntArray( 91, 89, 92 ), PoolIntArray( 94, 93, 95 ), PoolIntArray( 95, 93, 96 ), PoolIntArray( 98, 97, 99 ), PoolIntArray( 99, 97, 100 ), PoolIntArray( 100, 97, 101 ), PoolIntArray( 103, 102, 104 ), PoolIntArray( 104, 102, 105 ) ]
+
+[sub_resource type="PlaneMesh" id=3]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="OmniLight17" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5, 2, -22 )
+light_energy = 3.0
+shadow_enabled = true
+omni_range = 16.0
+
+[node name="OmniLight18" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5, 2, -6 )
+light_energy = 3.0
+shadow_enabled = true
+omni_range = 16.0
+
+[node name="OmniLight19" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5, 2, 13 )
+light_energy = 3.0
+shadow_enabled = true
+omni_range = 16.0
+
+[node name="OmniLight20" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, -22 )
+light_energy = 3.0
+shadow_enabled = true
+omni_range = 16.0
+
+[node name="OmniLight21" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, -6 )
+light_energy = 3.0
+shadow_enabled = true
+omni_range = 16.0
+
+[node name="OmniLight22" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, 13 )
+light_energy = 3.0
+shadow_enabled = true
+omni_range = 16.0
+
+[node name="OmniLight23" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 2, -22 )
+light_energy = 3.0
+shadow_enabled = true
+omni_range = 16.0
+
+[node name="OmniLight24" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 2, -6 )
+light_energy = 3.0
+shadow_enabled = true
+omni_range = 16.0
+
+[node name="OmniLight25" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 2, 13 )
+light_energy = 3.0
+shadow_enabled = true
+omni_range = 16.0
+
+[node name="CSGPolygon" type="CSGPolygon" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2, 0, -1 )
+operation = 2
+use_collision = true
+invert_faces = true
+polygon = PoolVector2Array( 30.5, 21, 31.5, -31, -32, -29.5, -25.5, 23 )
+depth = 15.0
+material = ExtResource( 1 )
+
+[node name="spawn" type="Spatial" parent="." groups=[
+"default_spawn",
+]]
+transform = Transform( 1.26637, 0, 0, 0, 1.26637, 0, 0, 0, 1.26637, 8.33934, 1.04812, -2.70296 )
+
+[node name="stage_volume" type="Area" parent="." groups=[
+"stage_volume",
+]]
+
+[node name="CollisionShape" type="CollisionShape" parent="stage_volume"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90342, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="test-blender-stage" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 42, -2.5, 4 )
+visible = false
+
+[node name="text_3d" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.5, -0.5 )
+
+[node name="Navigation" type="Navigation" parent="." groups=[
+"stage_nav",
+]]
+visible = false
+
+[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
+navmesh = SubResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 12.7, 0, 0, 0, 1, 0, 0, 0, 26.4, 15, 0.5, -5.5 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 13.97, 0, 0, 0, 1, 0, 0, 0, 26.4, -16.5, 0.5, -5.5 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 13.97, 0, 0, 0, 1, 0, 0, 0, 6.336, -2, 0.5, -24 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 13.97, 0, 0, 0, 1, 0, 0, 0, 3.29472, -2, 0.5, 17 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="obstacle" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2 )
+
+[node name="CSGBox" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox2" type="CSGBox" parent="obstacle"]
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox3" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox4" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox5" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox6" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox7" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox27" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox28" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -4 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox29" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox30" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -6 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox31" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox32" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 10 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox33" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox34" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -8 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox35" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox36" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -10 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox37" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox38" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -12 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox39" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox40" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -14 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox41" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox42" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -16 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox43" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -9.5 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox44" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, -9.5 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox45" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -11.5 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox8" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox9" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 2 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox10" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox11" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 6 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox12" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 8 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox13" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, -2 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox14" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 0 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox15" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 2 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox16" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 4 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox17" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 6 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox18" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 8 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox25" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 8 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox26" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -2 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox19" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13, -2 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox20" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13, 0 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox21" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13, 2 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox22" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13, 4 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox23" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13, 6 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="CSGBox24" type="CSGBox" parent="obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13, 8 )
+use_collision = true
+material = ExtResource( 5 )
+
+[node name="mummy" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0.5, -8 )
+
+[node name="gordon" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 2.5, -19.5 )
+
+[node name="heather" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 14, -9 )
+
+[node name="spawn_point" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.6167, 0.00316453, 6.12896 )
+save_point_id = "spawn_1"
+
+[node name="spawn_point2" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.6968, 0.00316453, -11.2242 )
+save_point_id = "spawn_2"
+
+[node name="vendo" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2015, 0.0904169, -0.0376135 )

@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://player/gun_manager.gd" type="Script" id=1]
+[ext_resource path="res://player/player.gd" type="Script" id=2]
+[ext_resource path="res://player/action_manager.gd" type="Script" id=3]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.33
+
+[sub_resource type="BoxShape" id=2]
+
+[node name="Player" type="KinematicBody" groups=[
+"player",
+]]
+script = ExtResource( 2 )
+
+[node name="sfx" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.890092, -0.25498 )
+
+[node name="Gun_Manager" type="Node2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="Action_Manager" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="CollisionBody" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0.5, 0 )
+shape = SubResource( 1 )
+
+[node name="CollisionFeet" type="CollisionShape" parent="."]
+transform = Transform( 0.4, 0, 0, 0, 0.1, 0, 0, 0, 0.4, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="Pivot" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Camera" type="Camera" parent="Pivot"]
+far = 1000.0

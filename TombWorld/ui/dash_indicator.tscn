@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/icons/ui_dash.aseprite" type="SpriteFrames" id=1]
+
+[node name="Node2D" type="AnimatedSprite"]
+frames = ExtResource( 1 )

@@ -1,0 +1,26 @@
+[remap]
+
+importer="aseprite.wizard.plugin"
+type="SpriteFrames"
+path="res://.import/scangun_scan.aseprite-9543f3fd7b89c3be24ee907d05f87759.res"
+
+[deps]
+
+source_file="res://assets/guns/scangun/scangun_scan.aseprite"
+dest_files=[ "res://.import/scangun_scan.aseprite-9543f3fd7b89c3be24ee907d05f87759.res" ]
+
+[params]
+
+split_layers=false
+exclude_layers_pattern=""
+only_visible_layers=false
+trim_images=false
+sprite_filename_pattern="{basename}.{layer}.{extension}"
+texture_strip/import_texture_strip=false
+texture_strip/filename_pattern="{basename}.{layer}.Strip.{extension}"
+texture_atlas/import_texture_atlas=false
+texture_atlas/filename_pattern="{basename}.{layer}.Atlas.{extension}"
+texture_atlas/frame_filename_pattern="{basename}.{layer}.{animation}.{frame}.Atlas.{extension}"
+animated_texture/import_animated_texture=false
+animated_texture/filename_pattern="{basename}.{layer}.{animation}.Texture.{extension}"
+animated_texture/frame_filename_pattern="{basename}.{layer}.{animation}.{frame}.Texture.{extension}"

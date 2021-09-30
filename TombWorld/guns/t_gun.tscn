@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/guns/tgun/tgun.aseprite" type="SpriteFrames" id=1]
+[ext_resource path="res://guns/t_gun.gd" type="Script" id=2]
+
+[node name="t_gun" type="Node2D"]
+scale = Vector2( 6, 6 )
+script = ExtResource( 2 )
+
+[node name="gun_sprite" type="AnimatedSprite" parent="."]
+frames = ExtResource( 1 )
+speed_scale = 0.2
+centered = false
+
+[node name="bullet_origin" type="Node2D" parent="."]
+position = Vector2( 116.277, 98.646 )

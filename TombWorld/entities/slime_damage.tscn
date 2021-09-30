@@ -1,0 +1,82 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/guns/slimegun/slime-ball.png" type="Texture" id=1]
+[ext_resource path="res://assets/guns/slimegun/slime-ball-damage.png" type="Texture" id=2]
+[ext_resource path="res://entities/slime_damage.gd" type="Script" id=3]
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 2
+emission_box_extents = Vector3( 0.4, 0.2, 0.4 )
+direction = Vector3( 0, 1, 0 )
+spread = 20.0
+flatness = 0.9
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 5.0
+initial_velocity_random = 0.17
+angular_velocity = 1.0
+angular_velocity_random = 1.0
+angle = -278.7
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_unshaded = true
+params_cull_mode = 2
+params_billboard_mode = 3
+params_use_alpha_scissor = true
+params_alpha_scissor_threshold = 0.98
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="QuadMesh" id=3]
+material = SubResource( 2 )
+size = Vector2( 0.1, 0.1 )
+
+[sub_resource type="ParticlesMaterial" id=4]
+emission_shape = 2
+emission_box_extents = Vector3( 0.4, 0.2, 0.4 )
+direction = Vector3( 0, 1, 0 )
+spread = 20.0
+flatness = 0.9
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 5.0
+initial_velocity_random = 0.17
+angular_velocity = 1.0
+angular_velocity_random = 1.0
+angle = -278.7
+
+[sub_resource type="SpatialMaterial" id=5]
+flags_unshaded = true
+params_cull_mode = 2
+params_billboard_mode = 3
+params_use_alpha_scissor = true
+params_alpha_scissor_threshold = 0.98
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="QuadMesh" id=6]
+material = SubResource( 5 )
+size = Vector2( 0.1, 0.1 )
+
+[node name="slime_damage" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="Particles" type="Particles" parent="."]
+emitting = false
+amount = 1
+explosiveness = 0.75
+randomness = 0.95
+local_coords = false
+process_material = SubResource( 1 )
+draw_pass_1 = SubResource( 3 )
+
+[node name="DamageParticles" type="Particles" parent="."]
+emitting = false
+amount = 1
+explosiveness = 0.75
+randomness = 0.95
+local_coords = false
+process_material = SubResource( 4 )
+draw_pass_1 = SubResource( 6 )

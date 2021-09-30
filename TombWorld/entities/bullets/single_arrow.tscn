@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/guns/tgun/single_arrow.aseprite" type="SpriteFrames" id=1]
+[ext_resource path="res://entities/bullets/single_arrow.gd" type="Script" id=2]
+[ext_resource path="res://entities/facing_sprite.gd" type="Script" id=5]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.0834415
+height = 1.09299
+
+[node name="single_arrow" type="KinematicBody" groups=[
+"bullet",
+]]
+collision_layer = 2
+script = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, -0.667265 )
+shape = SubResource( 1 )
+
+[node name="sprite" type="AnimatedSprite3D" parent="."]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, -0.667265 )
+opacity = 0.85
+billboard = 2
+frames = ExtResource( 1 )
+script = ExtResource( 5 )

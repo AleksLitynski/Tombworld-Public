@@ -1,0 +1,81 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/enemies/gordon/gordon_still_front.ase" type="SpriteFrames" id=1]
+[ext_resource path="res://entities/facing_sprite.gd" type="Script" id=2]
+[ext_resource path="res://entities/enemies/gordon.gd" type="Script" id=3]
+[ext_resource path="res://addons/behavior_tree/src/blackboard.gd" type="Script" id=4]
+[ext_resource path="res://addons/behavior_tree/src/behavior_tree.gd" type="Script" id=5]
+[ext_resource path="res://addons/behavior_tree/src/btnodes/composites/bt_selector.gd" type="Script" id=6]
+[ext_resource path="res://entities/behaviors/bt_random.gd" type="Script" id=7]
+[ext_resource path="res://entities/behaviors/bt_cansee_player.gd" type="Script" id=8]
+[ext_resource path="res://entities/behaviors/stalk.gd" type="Script" id=9]
+[ext_resource path="res://entities/behaviors/gordon/gordon_shoot.gd" type="Script" id=10]
+[ext_resource path="res://utils/dialog_tag.tscn" type="PackedScene" id=11]
+
+[sub_resource type="CylinderShape" id=1]
+radius = 1.26008
+height = 3.73433
+
+[node name="gordon" type="KinematicBody" groups=[
+"enemy",
+]]
+script = ExtResource( 3 )
+health = 120.0
+speed = 100.0
+
+[node name="sfx" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.25038, 0.0777247 )
+unit_db = 60.0
+unit_size = 50.0
+max_db = 6.0
+
+[node name="eye_mount" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.637, 0 )
+
+[node name="point" type="Spatial" parent="eye_mount"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.421323, 0, -0.327462 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1.93706, 0 )
+shape = SubResource( 1 )
+
+[node name="sprite" type="AnimatedSprite3D" parent="CollisionShape"]
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0.703087, 0 )
+billboard = 2
+shaded = true
+frames = ExtResource( 1 )
+frame = 1
+playing = true
+script = ExtResource( 2 )
+
+[node name="Blackboard" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="behavior_tree" type="Node" parent="."]
+script = ExtResource( 5 )
+is_active = true
+_blackboard = NodePath("../Blackboard")
+_agent = NodePath("..")
+
+[node name="BTSelector" type="Node" parent="behavior_tree"]
+script = ExtResource( 6 )
+
+[node name="50% chance to attack" type="Node" parent="behavior_tree/BTSelector"]
+script = ExtResource( 7 )
+odds = 20
+
+[node name="BTCanSeePlayer" type="Node" parent="behavior_tree/BTSelector/50% chance to attack"]
+script = ExtResource( 8 )
+height = 3.0
+
+[node name="BTGordonShoot" type="Node" parent="behavior_tree/BTSelector/50% chance to attack/BTCanSeePlayer"]
+script = ExtResource( 10 )
+
+[node name="Stalk the player" type="Node" parent="behavior_tree/BTSelector"]
+script = ExtResource( 9 )
+target_offset = 20.0
+good_enough_window = 5.0
+agent_height = 3.0
+
+[node name="dialog_tag" parent="." instance=ExtResource( 11 )]
+tag = "Enemy: Gordon"

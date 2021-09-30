@@ -1,0 +1,383 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://entities/doors/simple_door.tscn" type="PackedScene" id=1]
+[ext_resource path="res://entities/doors/doorway.tscn" type="PackedScene" id=2]
+[ext_resource path="res://stages/entryway/the_pits.gd" type="Script" id=3]
+[ext_resource path="res://entities/enemies/heather.tscn" type="PackedScene" id=4]
+[ext_resource path="res://entities/enemies/mummy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://entities/enemies/gordon.tscn" type="PackedScene" id=6]
+[ext_resource path="res://entities/elevator/elevator.tscn" type="PackedScene" id=7]
+[ext_resource path="res://entities/button.tscn" type="PackedScene" id=8]
+[ext_resource path="res://entities/hex_circle.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/models/cube.gltf" type="PackedScene" id=10]
+[ext_resource path="res://assets/models/pillar_1.gltf" type="PackedScene" id=11]
+[ext_resource path="res://assets/models/small-cube.gltf" type="PackedScene" id=12]
+[ext_resource path="res://entities/chains.tscn" type="PackedScene" id=13]
+[ext_resource path="res://entities/weapon_pedestals.tscn" type="PackedScene" id=18]
+[ext_resource path="res://entities/filler/candlestand.tscn" type="PackedScene" id=19]
+[ext_resource path="res://entities/gate.tscn" type="PackedScene" id=20]
+[ext_resource path="res://assets/models/entryway_shooter.gltf" type="PackedScene" id=25]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 22.5435, 9.94856, 17.0464 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 7.09555, 6.05178, 11.41 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 2.33773, 9.80939, 8.05534 )
+
+[sub_resource type="SphereShape" id=4]
+radius = 4.49738
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 4.34262, 1.41827, 1.54658 )
+
+[sub_resource type="NavigationMesh" id=6]
+vertices = PoolVector3Array( 10.8824, 0.4, 14.4474, 9.98239, 0.4, 15.0474, 9.98239, 0.4, 15.9474, 12.0824, 0.4, 18.6474, 12.9824, 0.4, 18.6474, 3.08239, 0.8, 13.2474, 5.78239, 0.8, 13.2474, 13.5824, 0.8, 4.84739, -7.41761, 0.8, -10.4526, -18.5176, 0.8, -10.4526, -18.5176, 0.8, 1.24739, 20.1824, 0.4, 3.04739, 15.9824, 0.4, 3.04739, 15.6824, 0.4, 5.14739, 15.6824, 0.4, 6.64739, 15.9824, 0.4, 9.04739, 20.1824, 0.4, 9.04739, 6.38239, 0.8, -10.7526, 6.38239, 0.4, -13.1526, 4.28239, 0.4, -13.1526, 3.98239, 0.8, -10.4526, 5.48239, 0.4, 15.9474, 3.38239, 0.4, 15.9474, 1.88239, 0.4, 16.2474, 1.88239, 0.4, 21.0474, 6.98239, 0.4, 21.0474, 6.98239, 0.4, 16.2474, -7.71761, 0.8, 13.2474, 3.08239, 0.8, 13.2474, 13.5824, 0.8, 4.84739, 3.98239, 0.8, -10.4526, -7.41761, 0.8, -10.4526, -18.5176, 0.8, 1.24739, 17.4824, 0.4, 15.0474, 15.0824, 0.4, 11.4474, 13.5824, 0.8, 11.1474, 10.5824, 0.8, 13.2474, 10.8824, 0.4, 14.4474, 12.9824, 0.4, 18.6474, 13.2524, 0.8, 13.5174, 13.2764, 0.4, 15.3438, 4.28239, 0.4, -13.1526, 6.38239, 0.4, -13.1526, 8.48239, 0.4, -13.4526, 8.48239, 0.4, -18.2526, 2.18239, 0.4, -18.2526, 2.18239, 0.4, -13.4526, 10.5824, 0.8, 13.2474, 13.5824, 0.8, 11.1474, 13.5824, 0.8, 6.94739, 10.5824, 0.8, 13.2474, 13.5824, 0.8, 6.94739, 13.5824, 0.8, 4.84739, 5.78239, 0.8, 13.2474, 13.5824, 0.8, 4.84739, 13.5824, 0.8, -2.95261, 3.98239, 0.8, -10.4526, 13.5824, 0.8, 6.94739, 15.6824, 0.4, 6.64739, 15.6824, 0.4, 5.14739, 13.5824, 0.8, 4.84739, 3.08239, 0.8, 13.2474, 3.38239, 0.4, 15.9474, 5.48239, 0.4, 15.9474, 5.78239, 0.8, 13.2474, 13.5824, 0.8, -10.4526, 6.38239, 0.8, -10.7526, 3.98239, 0.8, -10.4526, 13.5824, 0.8, -2.95261, -18.5176, 0.8, 1.24739, -18.5176, 0.8, 13.2474, -7.71761, 0.8, 13.2474 )
+polygons = [ PoolIntArray( 1, 0, 2 ), PoolIntArray( 2, 0, 3 ), PoolIntArray( 3, 0, 4 ), PoolIntArray( 7, 6, 5 ), PoolIntArray( 8, 10, 9 ), PoolIntArray( 13, 12, 14 ), PoolIntArray( 14, 12, 15 ), PoolIntArray( 15, 12, 11 ), PoolIntArray( 15, 11, 16 ), PoolIntArray( 18, 17, 19 ), PoolIntArray( 19, 17, 20 ), PoolIntArray( 21, 26, 22 ), PoolIntArray( 22, 26, 23 ), PoolIntArray( 23, 26, 25 ), PoolIntArray( 23, 25, 24 ), PoolIntArray( 28, 27, 29 ), PoolIntArray( 29, 27, 30 ), PoolIntArray( 30, 27, 31 ), PoolIntArray( 31, 27, 32 ), PoolIntArray( 37, 40, 38 ), PoolIntArray( 38, 40, 33 ), PoolIntArray( 33, 39, 34 ), PoolIntArray( 34, 39, 35 ), PoolIntArray( 35, 39, 36 ), PoolIntArray( 36, 39, 37 ), PoolIntArray( 37, 39, 40 ), PoolIntArray( 40, 39, 33 ), PoolIntArray( 42, 41, 43 ), PoolIntArray( 43, 41, 46 ), PoolIntArray( 43, 46, 45 ), PoolIntArray( 43, 45, 44 ), PoolIntArray( 47, 49, 48 ), PoolIntArray( 51, 50, 52 ), PoolIntArray( 52, 50, 53 ), PoolIntArray( 56, 55, 54 ), PoolIntArray( 58, 57, 59 ), PoolIntArray( 59, 57, 60 ), PoolIntArray( 62, 61, 63 ), PoolIntArray( 63, 61, 64 ), PoolIntArray( 66, 65, 67 ), PoolIntArray( 67, 65, 68 ), PoolIntArray( 71, 70, 69 ) ]
+
+[sub_resource type="PlaneMesh" id=7]
+
+[sub_resource type="PlaneMesh" id=8]
+
+[node name="the_pits" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="stage_mesh" parent="." instance=ExtResource( 25 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45.2797, 0.8149, 2.83991 )
+
+[node name="stage_volume" type="Area" parent="." groups=[
+"stage_volume",
+]]
+
+[node name="CollisionShape" type="CollisionShape" parent="stage_volume"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 39.5451, -10.5074, 5.14505 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="stage_volume"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 44.9727, -15.5175, -21.4366 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="stage_volume"]
+transform = Transform( 0.993331, 0, 0.115301, 0, 1, 0, -0.115301, 0, 0.993331, 42.4587, -5.91475, -22.882 )
+shape = SubResource( 3 )
+
+[node name="elevators" type="Spatial" parent="."]
+
+[node name="elevator" parent="elevators" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36.2926, 2.4698, -2.27344 )
+speed = 10.0
+
+[node name="__elevator_button_1" parent="elevators/elevator" instance=ExtResource( 8 )]
+transform = Transform( -0.999977, 0, -0.00682396, 0, 1, 0, 0.00682396, 0, -0.999977, -13.6466, -8.08865, 12.9574 )
+
+[node name="__elevator_target" type="Spatial" parent="elevators/elevator/__elevator_button_1"]
+transform = Transform( 1, 0, -4.65661e-10, 0, 1, 0, 4.65661e-10, 0, 1, -1.87749, -0.260357, 1.14167 )
+
+[node name="__elevator_button_2" parent="elevators/elevator" instance=ExtResource( 8 )]
+transform = Transform( -0.85802, 0, 0.513616, 0, 1, 0, -0.513616, 0, -0.85802, -14.9771, -21.6487, 13.4482 )
+
+[node name="__elevator_target" type="Spatial" parent="elevators/elevator/__elevator_button_2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.20014, -0.00153351, 2.06551 )
+
+[node name="elevator2" parent="elevators" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.6691, 2.4698, -28.7885 )
+speed = 10.0
+
+[node name="__elevator_button_1" parent="elevators/elevator2" instance=ExtResource( 8 )]
+transform = Transform( -0.432479, 0, 0.901644, 0, 1, 0, -0.901644, 0, -0.432479, -1.85946, -21.6226, 1.12331 )
+
+[node name="__elevator_target" type="Spatial" parent="elevators/elevator2/__elevator_button_1"]
+transform = Transform( 1, 0, -1.19209e-07, 0, 1, 0, 1.19209e-07, 0, 1, 0.214945, 0.00623894, 2.15758 )
+
+[node name="__elevator_button_2" parent="elevators/elevator2" instance=ExtResource( 8 )]
+transform = Transform( -0.432479, 0, 0.901644, 0, 1, 0, -0.901644, 0, -0.432479, -0.493816, -2.09122, 2.05531 )
+
+[node name="__elevator_target" type="Spatial" parent="elevators/elevator2/__elevator_button_2"]
+transform = Transform( 1, 0, -1.49012e-07, 0, 1, 0, 1.49012e-07, 0, 1, 1.63279, 0.00623894, 1.36047 )
+
+[node name="items" type="Spatial" parent="."]
+
+[node name="weapon_pedestals2" parent="items" instance=ExtResource( 18 )]
+transform = Transform( 0.943884, -3.92132e-08, -0.0567055, 3.92132e-08, 0.94559, -2.45083e-09, 0.0567054, -4.02916e-16, 0.94389, 44.5956, -19.1725, -27.4207 )
+item_name = "artifact"
+
+[node name="props" type="Spatial" parent="."]
+
+[node name="clutter" type="Spatial" parent="props"]
+
+[node name="candlestand32" parent="props/clutter" instance=ExtResource( 19 )]
+transform = Transform( 0.267676, -1.42109e-14, 0, 1.42109e-14, 0.267676, 0, 0, 0, 0.267675, 49.171, -19.1511, -30.871 )
+
+[node name="candlestand33" parent="props/clutter" instance=ExtResource( 19 )]
+transform = Transform( 0.267676, -1.42109e-14, 0, 1.42109e-14, 0.267676, 0, 0, 0, 0.267675, 39.9595, -19.1511, -30.871 )
+
+[node name="candlestand34" parent="props/clutter" instance=ExtResource( 19 )]
+transform = Transform( 0.267676, -1.42109e-14, 0, 1.42109e-14, 0.267676, 0, 0, 0, 0.267675, 39.9595, -19.1511, -23.7059 )
+
+[node name="candlestand35" parent="props/clutter" instance=ExtResource( 19 )]
+transform = Transform( 0.267676, -1.42109e-14, 0, 1.42109e-14, 0.267676, 0, 0, 0, 0.267675, 48.8496, -19.1511, -23.7059 )
+
+[node name="candlestand36" parent="props/clutter" instance=ExtResource( 19 )]
+transform = Transform( 0.267676, -1.42109e-14, 0, 1.42109e-14, 0.267676, 0, 0, 0, 0.267675, 47.7631, -19.1511, -15.6295 )
+
+[node name="pillar_1" parent="props" instance=ExtResource( 11 )]
+transform = Transform( 0.261905, 0, 0, 0, 0.256665, 0.0521304, 0, -0.0521304, 0.256665, 30.6074, -20.7466, 6.94472 )
+
+[node name="small-cube" parent="props" instance=ExtResource( 12 )]
+transform = Transform( 0.229067, 0, -0.00271476, 0, 0.229083, 0, 0.00271476, 0, 0.229067, 19.391, -19.1513, 1.61768 )
+
+[node name="small-cube2" parent="props" instance=ExtResource( 12 )]
+transform = Transform( 0.184176, 0, -0.136229, 0, 0.229083, 0, 0.136229, 0, 0.184176, 20.2789, -19.1513, -0.12089 )
+
+[node name="small-cube3" parent="props" instance=ExtResource( 12 )]
+transform = Transform( 0.222156, 0, -0.055909, 0, 0.229083, 0, 0.055909, 0, 0.222156, 20.5812, -19.1513, 1.3356 )
+
+[node name="small-cube4" parent="props" instance=ExtResource( 12 )]
+transform = Transform( 0.173806, 0, 0.149233, 0, 0.229083, 0, -0.149233, 0, 0.173806, 19.5458, -18.2368, 1.15605 )
+
+[node name="small-cube5" parent="props" instance=ExtResource( 12 )]
+transform = Transform( 0.173806, 0, 0.149233, 0, 0.229083, 0, -0.149233, 0, 0.173806, 31.9561, -5.60834, -0.200133 )
+
+[node name="chains3" parent="props/small-cube5" instance=ExtResource( 13 )]
+transform = Transform( 5.17398, 0, 1.88164, 0, 5.50551, 0, -1.88164, 0, 5.17398, 1.91229, 22.2, 2.16965 )
+length = 11
+
+[node name="small-cube6" parent="props" instance=ExtResource( 12 )]
+transform = Transform( 0.112336, 0, 0.199649, 0, 0.229083, 0, -0.199649, 0, 0.112336, 38.1523, -5.60834, 0.318438 )
+
+[node name="chains2" parent="props/small-cube6" instance=ExtResource( 13 )]
+transform = Transform( 5.50551, 0, 0, 0, 5.50551, 0, 0, 0, 5.50551, 2.119, 22.2, 2.401 )
+length = 11
+
+[node name="small-cube7" parent="props" instance=ExtResource( 12 )]
+transform = Transform( 0.112336, 0, 0.199649, 0, 0.229083, 0, -0.199649, 0, 0.112336, 36.5492, -6.4704, 6.25357 )
+
+[node name="chains" parent="props/small-cube7" instance=ExtResource( 13 )]
+transform = Transform( 5.50551, 0, 0, 0, 5.50551, 0, 0, 0, 5.50551, 2.24028, 23.0031, 1.87863 )
+length = 11
+
+[node name="cube" parent="props" instance=ExtResource( 10 )]
+transform = Transform( 0.229067, 0, -0.00271476, 0, 0.229083, 0, 0.00271476, 0, 0.229067, 37.5104, -18.202, 12.9055 )
+
+[node name="pillar_2" parent="props" instance=ExtResource( 11 )]
+transform = Transform( 0.203682, 0, -0.164645, 0, 0.261905, 0, 0.164645, 0, 0.203682, 33.3996, -19.3438, -4.80069 )
+
+[node name="puddle" parent="props" instance=ExtResource( 9 )]
+transform = Transform( 6.48937, 0, 0, 0, 1, 0, 0, 0, 6.48937, 33.8369, -19.2773, -9.26118 )
+
+[node name="doors_and_gates" type="Spatial" parent="."]
+
+[node name="wave_2_1" parent="doors_and_gates" instance=ExtResource( 20 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 54.2192, -19.2038, 7.27661 )
+size = Vector2( 6, 11 )
+auto_save = false
+
+[node name="__open_target" type="Spatial" parent="doors_and_gates/wave_2_1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.09258, 0 )
+
+[node name="wave_2_2" parent="doors_and_gates" instance=ExtResource( 20 )]
+transform = Transform( 0.999955, 0, 0.0094596, 0, 1, 0, -0.0094596, 0, 0.999955, 41.8665, -19.2038, 15.0252 )
+size = Vector2( 7, 11 )
+auto_save = false
+
+[node name="__open_target" type="Spatial" parent="doors_and_gates/wave_2_2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.09258, 0 )
+
+[node name="wave_3_1" parent="doors_and_gates" instance=ExtResource( 20 )]
+transform = Transform( 0.782652, 0, 0.62246, 0, 1, 0, -0.62246, 0, 0.782652, 49.6961, -19.2038, 13.5793 )
+size = Vector2( 6, 11 )
+auto_save = false
+
+[node name="__open_target" type="Spatial" parent="doors_and_gates/wave_3_1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.09258, 0 )
+
+[node name="wave_3_2" parent="doors_and_gates" instance=ExtResource( 20 )]
+transform = Transform( 0.999955, 0, 0.0094596, 0, 1, 0, -0.0094596, 0, 0.999955, 42.2405, -19.2038, -11.9081 )
+size = Vector2( 9, 11 )
+auto_save = false
+
+[node name="__open_target" type="Spatial" parent="doors_and_gates/wave_3_2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.09258, 0 )
+
+[node name="success" parent="doors_and_gates" instance=ExtResource( 20 )]
+transform = Transform( 0.999955, 0, 0.0094596, 0, 1, 0, -0.0094596, 0, 0.999955, 42.2405, -19.2038, -20.3749 )
+size = Vector2( 9, 11 )
+
+[node name="__open_target" type="Spatial" parent="doors_and_gates/success"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.09258, 0 )
+
+[node name="door_to_pillars" parent="doors_and_gates" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 19.6275, -2.04403, 5.39039 )
+target_stage_name = "entryway/fallen_pillars"
+door_name = "pillars_to_pits"
+
+[node name="CollisionShape" type="CollisionShape" parent="doors_and_gates/door_to_pillars"]
+transform = Transform( 0.999999, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 0.999999, -2.87515, -2.78801, -0.575075 )
+shape = SubResource( 4 )
+
+[node name="simple_door" parent="doors_and_gates/door_to_pillars" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.4837, -3.53, -0.44 )
+
+[node name="door_to_throne" parent="doors_and_gates" instance=ExtResource( 2 )]
+transform = Transform( 0.133121, 0, -0.9911, 0, 1, 0, 0.9911, 0, 0.133121, 42.6948, 3.87491, -16.303 )
+target_stage_name = "entryway/the_throne_room"
+door_name = "throne_to_pits"
+
+[node name="CollisionShape" type="CollisionShape" parent="doors_and_gates/door_to_throne"]
+transform = Transform( 0.999905, 0, -0.0137527, 0, 1, 0, 0.0137527, 0, 0.999905, -3.84678, -2.47434, -0.505512 )
+shape = SubResource( 5 )
+
+[node name="simple_door" parent="doors_and_gates/door_to_throne" instance=ExtResource( 1 )]
+transform = Transform( -0.00617838, 0, -0.999982, 0, 1, 0, 0.999982, 0, -0.00617838, 0.18137, -3.53, -0.356644 )
+
+[node name="Navigation" type="Navigation" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 39.2054, -18.8606, 0 )
+
+[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
+visible = false
+navmesh = SubResource( 6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 16.5564, 0, 0, 0, 1.65531, 0, 0, 0, 12.2025, -2.56121, 0.478706, 1.41758 )
+mesh = SubResource( 7 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 2.66685, 0, 0, 0, 1, 0, 0, 0, 3.38766, 18.1475, 0, 5.9696 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 3.02728, 0, 0, 0, 1, 0, 0, 0, 2.92981, 4.45229, 0, 18.5836 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 3.5839, 0, 0, 0, 1, 0, 0, 0, 2.92981, 5.37165, 0, -15.9228 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 1.60698, 0, 0, 0, 1, 0, 0, 0, 2.92981, 5.37165, 0, -12.6744 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 2.69039, 0, 0, 0, 1, 0, 0, 0, 1.13412, 14.6878, 0, 5.89657 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance8" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 1.53613, 0, 0, 0, 1, 0, 0, 0, 1.48167, 4.32971, 0, 15.0901 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance9" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 1.23315, 0, 0.883515, 0, 1, 0, -0.915984, 0, 1.18944, 11.562, 0, 12.6385 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 1.62639, 0, -2.92666, 0, 1, 0, 2.11352, 0, 2.25213, 13.6425, 0, 15.1148 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="wave_1" type="Spatial" parent="Navigation"]
+
+[node name="mummy2" parent="Navigation/wave_1" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0024, 0.0247116, -3.92927 )
+
+[node name="mummy3" parent="Navigation/wave_1" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.54259, 0.128391, -10.2402 )
+
+[node name="heather" parent="Navigation/wave_1" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.802856, 7.42274, 6.44582 )
+
+[node name="heather2" parent="Navigation/wave_1" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.03868, 7.42274, 2.77024 )
+
+[node name="heather3" parent="Navigation/wave_1" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.04298, 7.42274, -1.62755 )
+
+[node name="mummy" parent="Navigation/wave_1" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.849293, 0.0247116, -0.714193 )
+
+[node name="wave_2" type="Spatial" parent="Navigation"]
+
+[node name="heather6" parent="Navigation/wave_2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.69576, 2.80941, 17.2737 )
+
+[node name="heather7" parent="Navigation/wave_2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.96629, 2.80941, 20.2744 )
+
+[node name="gordon" parent="Navigation/wave_2" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.31547, -0.161634, 19.6524 )
+
+[node name="mummy4" parent="Navigation/wave_2" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5256, 0.128391, 5.39004 )
+
+[node name="mummy5" parent="Navigation/wave_2" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5256, 0.128391, 6.86529 )
+
+[node name="mummy6" parent="Navigation/wave_2" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5256, 0.128391, 8.2693 )
+
+[node name="mummy9" parent="Navigation/wave_2" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.17214, 0.128391, 18.7417 )
+
+[node name="wave_3" type="Spatial" parent="Navigation"]
+
+[node name="mummy7" parent="Navigation/wave_3" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.315, 0.128391, 13.6236 )
+
+[node name="mummy8" parent="Navigation/wave_3" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.471, 0.128391, 15.9281 )
+
+[node name="mummy14" parent="Navigation/wave_3" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.65383, 0.0247116, -13.948 )
+
+[node name="mummy13" parent="Navigation/wave_3" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.30291, 0.0247116, -15.868 )
+
+[node name="heather4" parent="Navigation/wave_3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1224, 2.80941, 14.1794 )
+
+[node name="heather8" parent="Navigation/wave_3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25536, 2.80941, -14.3568 )
+
+[node name="heather9" parent="Navigation/wave_3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.76348, 2.80941, -13.6504 )
+
+[node name="heather10" parent="Navigation/wave_3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.55721, 2.80941, -18.2775 )
+
+[node name="heather11" parent="Navigation/wave_3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.80453, 2.80941, -13.9745 )
+
+[node name="heather5" parent="Navigation/wave_3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.019, 2.80941, 16.4756 )
+
+[node name="gordon2" parent="Navigation/wave_3" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.55709, -0.345032, -15.9799 )
+
+[node name="mummy10" parent="Navigation/wave_3" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95705, 0.0247116, -17.7442 )
+
+[node name="mummy11" parent="Navigation/wave_3" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0616, 0.0247116, -16.096 )
+
+[node name="mummy15" parent="Navigation/wave_3" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.33245, 0.0247116, -17.9253 )
+
+[node name="mummy16" parent="Navigation/wave_3" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.14031, 0.0247116, -14.2068 )
+
+[node name="mummy12" parent="Navigation/wave_3" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.98606, 0.0247116, -17.6323 )
+
+[node name="default_spawn" type="Spatial" parent="." groups=[
+"default_spawn",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.7238, -4.16353, 1.30891 )

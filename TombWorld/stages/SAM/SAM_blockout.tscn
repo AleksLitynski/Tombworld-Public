@@ -1,0 +1,1007 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://assets/placeholder_textures/Orange.tres" type="Material" id=1]
+[ext_resource path="res://utils/text_3d.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/placeholder_textures/Light.tres" type="Material" id=3]
+[ext_resource path="res://assets/placeholder_textures/green.tres" type="Material" id=4]
+[ext_resource path="res://assets/placeholder_textures/dark.tres" type="Material" id=5]
+[ext_resource path="res://entities/filler/brazier.tscn" type="PackedScene" id=6]
+[ext_resource path="res://stages/SAM/labs_glide_room.gd" type="Script" id=7]
+[ext_resource path="res://stages/stage_pieces/glide_room_initial.tscn" type="PackedScene" id=8]
+[ext_resource path="res://stages/stage_pieces/pillars_challenge.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/tiles/stone_brick.png" type="Texture" id=10]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 1, 1, 1, 0 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 10 )
+uv1_scale = Vector3( 0.25, 0.25, 0.25 )
+uv1_triplanar = true
+
+[sub_resource type="Animation" id=3]
+length = 11.0
+tracks/0/type = "transform"
+tracks/0/path = NodePath("pillars_inital")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, -1.48271, -0.395546, -0.112211, 0, 0, 0, 1, 0.884564, 1.9798, 0.884564, 5, 1, -1.48271, -6.59395, -0.112211, 0, 0, 0, 1, 0.884564, 1.9798, 0.884564 )
+tracks/1/type = "transform"
+tracks/1/path = NodePath("pillars_challenge")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = PoolRealArray( 6, 1, -1.96797, -11.2596, -0.282236, 0, 7.45058e-08, 0, 1, 1, 1, 1, 11, 1, -1.968, 0, -0.282, 0, 7.45058e-08, 0, 1, 1, 1, 1 )
+
+[sub_resource type="SphereShape" id=4]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="blockout" type="CSGCombiner" parent="."]
+use_collision = true
+
+[node name="outer_bounds" type="CSGBox" parent="blockout"]
+width = 1000.0
+height = 1000.0
+depth = 1000.0
+material = SubResource( 1 )
+
+[node name="morgue" type="CSGCombiner" parent="blockout"]
+operation = 2
+
+[node name="trash" type="CSGCombiner" parent="blockout"]
+operation = 2
+
+[node name="silo" type="CSGCombiner" parent="blockout"]
+operation = 2
+
+[node name="hanger" type="CSGCombiner" parent="blockout"]
+operation = 2
+
+[node name="labs" type="CSGCombiner" parent="blockout"]
+operation = 2
+
+[node name="farms" type="CSGCombiner" parent="blockout"]
+operation = 2
+
+[node name="entryway" type="CSGCombiner" parent="blockout"]
+operation = 2
+
+[node name="security" type="CSGCombiner" parent="blockout"]
+operation = 2
+
+[node name="foyer" type="CSGBox" parent="blockout"]
+transform = Transform( 0.940662, 0, -0.339346, 0, 1, 0, 0.339346, 0, 0.940662, 301.296, 34.352, 50.6481 )
+operation = 2
+width = 9.051
+height = 12.0
+depth = 95.8696
+material = ExtResource( 1 )
+
+[node name="CSGCombiner" type="CSGCombiner" parent="blockout/foyer"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.41769, -5.13171, 23.0465 )
+operation = 2
+
+[node name="CSGBox" type="CSGBox" parent="blockout/foyer/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.325714, 0, 2.16013 )
+width = 3.0
+height = 3.18969
+depth = 7.43344
+
+[node name="CSGBox2" type="CSGBox" parent="blockout/foyer/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.345337, 0, -2.64938 )
+width = 3.0
+height = 8.2661
+depth = 7.32834
+
+[node name="CSGBox3" type="CSGBox" parent="blockout/foyer/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.295624, 0, -7.57629 )
+width = 3.0
+height = 13.2425
+depth = 5.0
+
+[node name="CSGBox" type="CSGBox" parent="blockout/foyer"]
+transform = Transform( 0.65276, 0, 0.757565, 0, 1, 0, -0.757565, 0, 0.65276, -0.574463, -2.63574, 7.66631 )
+operation = 2
+width = 20.7087
+height = 0.87762
+depth = 3.14653
+
+[node name="CSGBox2" type="CSGBox" parent="blockout/foyer"]
+transform = Transform( 0.743227, 0, -0.66904, 0, 1, 0, 0.66904, 0, 0.743227, -1.99811, -4.05323, -7.97972 )
+operation = 2
+width = 20.7087
+height = 0.87762
+depth = 3.14653
+
+[node name="CSGBox3" type="CSGBox" parent="blockout/foyer"]
+transform = Transform( 0.680237, 0.264202, 0.683721, -0.255485, 0.959746, -0.116679, -0.687026, -0.0953112, 0.720354, -3.15173, -5.61057, -16.8118 )
+operation = 2
+width = 10.2874
+height = 0.87762
+depth = 3.14653
+
+[node name="CSGBox5" type="CSGBox" parent="blockout/foyer"]
+transform = Transform( -0.0157893, -0.403934, 0.914651, -0.0151162, 0.914758, 0.40372, -0.99976, -0.00745168, -0.0205493, 3.31799, -5.4902, -26.4598 )
+operation = 2
+width = 15.4279
+height = 0.87762
+depth = 3.14653
+
+[node name="CSGBox4" type="CSGBox" parent="blockout/foyer"]
+transform = Transform( 0.986065, -0.161812, -0.0386269, 0.161812, 0.878992, 0.448542, -0.0386269, -0.448542, 0.892927, 1.14804, -4.85522, 46.2626 )
+operation = 2
+width = 12.948
+height = 4.55617
+depth = 12.4436
+
+[node name="Spatial" parent="blockout/foyer" instance=ExtResource( 6 )]
+transform = Transform( -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 1.42109e-14, 0, 1, -5.05508, 3.57948, 38.3293 )
+
+[node name="Spatial3" parent="blockout/foyer" instance=ExtResource( 6 )]
+transform = Transform( -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 1.42109e-14, 0, 1, -4.88147, 3.57948, 8.62255 )
+
+[node name="Spatial4" parent="blockout/foyer" instance=ExtResource( 6 )]
+transform = Transform( -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 1.42109e-14, 0, 1, -5.11673, 3.57948, -16.5629 )
+
+[node name="Spatial2" parent="blockout/foyer" instance=ExtResource( 6 )]
+transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 1.42109e-14, 0, 1, 5.09726, 3.57948, 22.5814 )
+
+[node name="Spatial5" parent="blockout/foyer" instance=ExtResource( 6 )]
+transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 1.42109e-14, 0, 1, 5.15878, 3.57948, -2.13153 )
+
+[node name="Spatial6" parent="blockout/foyer" instance=ExtResource( 6 )]
+transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 1.42109e-14, 0, 1, 5.0759, 3.57948, -28.1413 )
+
+[node name="CSGCombiner2" type="CSGCombiner" parent="blockout/foyer"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8974, 0, -46.9418 )
+operation = 2
+
+[node name="CSGBox" type="CSGBox" parent="blockout/foyer/CSGCombiner2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.79373, -2.08517, 0.217628 )
+width = 3.61617
+height = 8.12458
+depth = 2.78899
+
+[node name="CSGBox2" type="CSGBox" parent="blockout/foyer/CSGCombiner2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.367493, -3.16729, 0.140228 )
+width = 3.61617
+height = 7.18101
+depth = 2.78899
+
+[node name="CSGBox3" type="CSGBox" parent="blockout/foyer/CSGCombiner2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.82767, -3.98867, 0.12854 )
+width = 3.61617
+height = 4.81394
+depth = 2.78899
+
+[node name="CSGBox4" type="CSGBox" parent="blockout/foyer/CSGCombiner2"]
+transform = Transform( 0.995315, -0.0282947, 0.0924459, -0.0279961, 0.830893, 0.555727, -0.0925369, -0.555712, 0.826209, 4.4201, -3.98867, 3.40329 )
+width = 3.61617
+height = 4.81394
+depth = 2.29086
+
+[node name="missle_silo" type="CSGCylinder" parent="blockout"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.763423, 0, 0 )
+operation = 2
+radius = 6.42988
+height = 40.6701
+material = ExtResource( 1 )
+
+[node name="OmniLight" type="OmniLight" parent="blockout/missle_silo"]
+omni_range = 8.4559
+
+[node name="OmniLight2" type="OmniLight" parent="blockout/missle_silo"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -12.2201, 0 )
+omni_range = 8.4559
+
+[node name="OmniLight3" type="OmniLight" parent="blockout/missle_silo"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.7974, 0 )
+omni_range = 8.4559
+
+[node name="hanger_to_silo" type="CSGBox" parent="blockout"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.24695, -18.4519, 0 )
+operation = 2
+width = 5.95657
+height = 3.72401
+depth = 3.15485
+material = ExtResource( 1 )
+
+[node name="OmniLight4" type="OmniLight" parent="blockout/hanger_to_silo"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.941717, 2.00004, 0 )
+omni_range = 8.4559
+
+[node name="hallway_entrance" type="CSGBox" parent="blockout"]
+transform = Transform( 1.75284, 0, 0, 0, 1, 0, 0, 0, 1, 295.193, 37.7186, 93.8736 )
+operation = 2
+width = 5.95657
+height = 3.72401
+depth = 3.15485
+material = ExtResource( 1 )
+
+[node name="OmniLight4" type="OmniLight" parent="blockout/hallway_entrance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.941717, 2.00004, 0 )
+omni_range = 8.4559
+
+[node name="foyer_exit_1" type="CSGBox" parent="blockout"]
+transform = Transform( 0.919705, 0, -0.39261, 0, 1, 0, 0.39261, 0, 0.919705, 289.458, 38.3988, 62.3093 )
+operation = 2
+width = 5.95657
+height = 3.266
+material = ExtResource( 1 )
+
+[node name="OmniLight4" type="OmniLight" parent="blockout/foyer_exit_1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.941717, 2.00004, 0 )
+omni_range = 8.4559
+
+[node name="labs_transition_exit" type="CSGBox" parent="blockout"]
+transform = Transform( 0.331321, 0, 0.943518, 0, 1, 0, -0.943518, 0, 0.331321, 260.034, 61.6474, 76.188 )
+operation = 2
+width = 7.479
+height = 3.857
+depth = 3.328
+material = ExtResource( 1 )
+
+[node name="OmniLight4" type="OmniLight" parent="blockout/labs_transition_exit"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.941717, 2.00004, 0 )
+omni_range = 8.4559
+
+[node name="labs_transition_exit2" type="CSGBox" parent="blockout"]
+transform = Transform( 0.871268, -0.352015, -0.34202, 0.374607, 0.927184, 0, 0.317116, -0.128123, 0.939693, 254.912, 59.6706, 48.417 )
+operation = 2
+width = 13.4321
+height = 3.857
+depth = 3.328
+material = ExtResource( 1 )
+
+[node name="OmniLight4" type="OmniLight" parent="blockout/labs_transition_exit2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.941717, 2.00004, 0 )
+omni_range = 8.4559
+
+[node name="foyer_exit_2" type="CSGBox" parent="blockout"]
+transform = Transform( 0.692483, 0, -0.721434, 0, 1, 0, 0.721434, 0, 0.692483, 309.72, 29.9822, 8.39487 )
+operation = 2
+width = 5.95657
+height = 3.266
+material = ExtResource( 1 )
+
+[node name="OmniLight4" type="OmniLight" parent="blockout/foyer_exit_2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.941717, 2.00004, 0 )
+omni_range = 8.4559
+
+[node name="foyer_exit_3" type="CSGBox" parent="blockout"]
+transform = Transform( 0.28706, 0, -0.957913, 0, 1, 0, 0.957913, 0, 0.28706, 311.721, 37.9692, -0.902308 )
+operation = 2
+width = 13.8171
+height = 3.266
+material = ExtResource( 1 )
+
+[node name="OmniLight4" type="OmniLight" parent="blockout/foyer_exit_3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.941717, 2.00004, 0 )
+omni_range = 8.4559
+
+[node name="descent_exit" type="CSGBox" parent="blockout"]
+transform = Transform( -0.96725, 0, -0.253825, 0, 1, 0, 0.253825, 0, -0.96725, 291.912, 11.1782, 3.89272 )
+operation = 2
+width = 12.1687
+height = 3.266
+depth = 3.14956
+material = ExtResource( 1 )
+
+[node name="OmniLight4" type="OmniLight" parent="blockout/descent_exit"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.941717, 2.00004, 0 )
+omni_range = 8.4559
+
+[node name="hanger_to_next_level" type="CSGBox" parent="blockout"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.48824, 18.828, 0 )
+operation = 2
+width = 5.95657
+height = 2.21967
+depth = 2.09373
+material = ExtResource( 3 )
+
+[node name="OmniLight4" type="OmniLight" parent="blockout/hanger_to_next_level"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.941717, 2.00004, 0 )
+omni_range = 8.4559
+
+[node name="hanger_1" type="CSGBox" parent="blockout"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.1178, -16.0868, 0 )
+operation = 2
+width = 34.5226
+height = 8.30436
+depth = 30.3687
+material = ExtResource( 1 )
+
+[node name="OmniLight4" type="OmniLight" parent="blockout/hanger_1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.941717, 2.00004, 0 )
+omni_range = 19.7984
+
+[node name="entryway_1" type="CSGBox" parent="blockout"]
+transform = Transform( 0.831091, 0, -0.556136, 0, 1, 0, 0.556136, 0, 0.831091, 319.221, 42.2104, 95.2001 )
+operation = 2
+width = 34.5226
+height = 12.6364
+depth = 24.4081
+material = ExtResource( 4 )
+
+[node name="CSGPolygon" type="CSGPolygon" parent="blockout/entryway_1"]
+transform = Transform( 1, 0, 2.38419e-07, 0, 1, 0, -2.98023e-08, 0, 4.992, 17.2226, 0, -1.4744 )
+polygon = PoolVector2Array( -0.176971, -5.92367, -0.0302124, 5.91525, 11.1347, 12.6389, 5.06595, -1.9159 )
+material = ExtResource( 4 )
+
+[node name="Spatial" parent="blockout/entryway_1" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 3.15718, 0, -2.98023e-08, 0, 1, 12.9663, -6.30991, 7.50349 )
+
+[node name="Spatial2" parent="blockout/entryway_1" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 3.15718, 0, -2.98023e-08, 0, 1, 12.8428, -6.30991, -8.71159 )
+
+[node name="Spatial3" parent="blockout/entryway_1" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 3.15718, 0, -2.98023e-08, 0, 1, -11.7672, -6.30991, 7.4309 )
+
+[node name="Spatial4" parent="blockout/entryway_1" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 3.15718, 0, -2.98023e-08, 0, 1, -11.8907, -6.30991, -8.78422 )
+
+[node name="labs_1" type="CSGBox" parent="blockout"]
+transform = Transform( -0.948507, 0, -2.46825, 0, 2.64423, 0, 2.46825, 0, -0.948507, 231.859, 60.6113, 37.4338 )
+operation = 2
+width = 11.3744
+height = 4.00669
+depth = 15.1099
+material = ExtResource( 5 )
+
+[node name="OmniLight6" type="OmniLight" parent="blockout/labs_1"]
+omni_range = 30.5365
+
+[node name="labs_4" type="CSGBox" parent="blockout"]
+transform = Transform( -0.948507, 0, -2.46825, 0, 2.64423, 0, 2.46825, 0, -0.948507, 241.492, 60.6113, 41.1355 )
+operation = 2
+width = 18.9872
+height = 4.00669
+depth = 3.87667
+material = ExtResource( 5 )
+
+[node name="OmniLight6" type="OmniLight" parent="blockout/labs_4"]
+omni_range = 30.5365
+
+[node name="labs_glide_room" type="CSGBox" parent="blockout"]
+transform = Transform( 2.4833, 0, -0.908368, 0, 2.64423, 0, 0.908368, 0, 2.4833, 186.735, 53.895, 63.0346 )
+operation = 2
+width = 38.0383
+height = 9.00943
+depth = 15.1099
+material = SubResource( 2 )
+script = ExtResource( 7 )
+
+[node name="pillars_inital" parent="blockout/labs_glide_room" instance=ExtResource( 8 )]
+transform = Transform( -0.884564, 0, -2.88228e-07, 0, 1.9798, 0, 2.88228e-07, 0, -0.884564, 6.5, -0.396, -0.112 )
+
+[node name="pillars_challenge" parent="blockout/labs_glide_room" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 4.76837e-07, 0, 1, 0, -4.76837e-07, 0, 1, -20.3532, -11.2906, 6.44315 )
+
+[node name="pillars_move_anim" type="AnimationPlayer" parent="blockout/labs_glide_room"]
+anims/raise_challenge = SubResource( 3 )
+
+[node name="OmniLight6" type="OmniLight" parent="blockout/labs_glide_room"]
+transform = Transform( 0.378183, 0, 5.96046e-08, 0, 0.378182, 0, -5.96046e-08, 0, 0.378183, 0, 2.65474, 0 )
+omni_range = 30.5365
+
+[node name="OmniLight12" type="OmniLight" parent="blockout/labs_glide_room"]
+transform = Transform( 0.378183, 0, 5.96046e-08, 0, 0.378182, 0, -5.96046e-08, 0, 0.378183, 10.6894, 0, 15.7078 )
+omni_range = 30.5365
+
+[node name="OmniLight10" type="OmniLight" parent="blockout/labs_glide_room"]
+transform = Transform( 0.378183, 0, 7.45058e-08, 0, 0.378182, 0, -7.45058e-08, 0, 0.378183, 7.07303, 1.73905, -0.91312 )
+omni_range = 30.5365
+
+[node name="OmniLight11" type="OmniLight" parent="blockout/labs_glide_room"]
+transform = Transform( 0.378183, 0, 1.49012e-07, 0, 0.378182, 0, -1.49012e-07, 0, 0.378183, 15.3812, 2.32062, -0.538618 )
+omni_range = 30.5365
+
+[node name="OmniLight7" type="OmniLight" parent="blockout/labs_glide_room"]
+transform = Transform( 0.378183, 0, 9.68575e-08, 0, 0.378182, 0, -9.68575e-08, 0, 0.378183, -11.6508, 2.57673, 0.428015 )
+omni_range = 30.5365
+
+[node name="OmniLight8" type="OmniLight" parent="blockout/labs_glide_room"]
+transform = Transform( 0.378183, 0, 1.2666e-07, 0, 0.378182, 0, -1.2666e-07, 0, 0.378183, -17.1322, 2.5338, -5.12665 )
+omni_range = 30.5365
+
+[node name="OmniLight9" type="OmniLight" parent="blockout/labs_glide_room"]
+transform = Transform( 0.378183, 0, 1.86265e-07, 0, 0.378182, 0, -1.86265e-07, 0, 0.378183, -16.8553, 2.5338, 6.41584 )
+omni_range = 30.5365
+
+[node name="Spatial" type="Spatial" parent="blockout/labs_glide_room"]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
+
+[node name="CSGCylinder5" type="CSGCylinder" parent="blockout/labs_glide_room"]
+transform = Transform( 0.0984345, 0, -0.995143, 0, 0.999998, 0, 0.995143, 0, 0.0984345, -17.0124, 0.875103, -0.609177 )
+operation = 2
+radius = 1.23405
+height = 0.766578
+
+[node name="CSGCylinder6" type="CSGCylinder" parent="blockout/labs_glide_room"]
+transform = Transform( 0.0984345, 0, -0.995143, 0, 0.999998, 0, 0.995143, 0, 0.0984345, -17.2067, 0.840952, -2.49203 )
+operation = 2
+radius = 0.914139
+height = 0.494305
+
+[node name="CSGCylinder7" type="CSGCylinder" parent="blockout/labs_glide_room"]
+transform = Transform( 0.0984345, 0, -0.995143, 0, 0.999997, 0, 0.995143, 0, 0.0984345, -16.8776, 0.840952, 1.28232 )
+operation = 2
+radius = 0.914139
+height = 0.494305
+
+[node name="Area" type="Area" parent="blockout/labs_glide_room"]
+transform = Transform( 0.0984345, 0, -0.995143, 0, 0.999998, 0, 0.995143, 0, 0.0984345, -16.8139, 2.02663, -0.731689 )
+
+[node name="CollisionShape" type="CollisionShape" parent="blockout/labs_glide_room/Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.319368, 0 )
+shape = SubResource( 4 )
+
+[node name="CSGBox" type="CSGBox" parent="blockout/labs_glide_room"]
+transform = Transform( 1, 0, 3.57628e-07, 0, 1, 0, -3.57628e-07, 0, 1, -18.1467, -2.14465, -0.328966 )
+operation = 2
+width = 7.55582
+height = 5.84038
+depth = 16.5605
+
+[node name="CSGBox2" type="CSGBox" parent="blockout/labs_glide_room"]
+transform = Transform( 1, 0, 4.76837e-07, 0, 1, 0, -4.76837e-07, 0, 1, 10.0496, 0, 14.6896 )
+width = 17.9257
+height = 9.009
+depth = 16.0318
+material = ExtResource( 5 )
+
+[node name="labs_3" type="CSGBox" parent="blockout"]
+transform = Transform( 2.4833, 0, -0.908368, 0, 2.64423, 0, 0.908368, 0, 2.4833, 247.084, 66.1653, -2.18196 )
+operation = 2
+width = 11.3744
+height = 9.00943
+depth = 15.1099
+material = ExtResource( 5 )
+
+[node name="OmniLight6" type="OmniLight" parent="blockout/labs_3"]
+omni_range = 30.5365
+
+[node name="CSGCylinder" type="CSGCylinder" parent="blockout/labs_3"]
+transform = Transform( 1, 0, 5.96046e-08, 0, 0.999999, 0, -5.96046e-08, 0, 1, 4.11022, -2.78776, -4.97687 )
+operation = 2
+height = 3.64709
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="blockout/labs_3"]
+transform = Transform( 1, 0, 5.96046e-08, 0, 0.999999, 0, -5.96046e-08, 0, 1, 0.747055, -0.534117, -6.86968 )
+operation = 2
+height = 3.64709
+
+[node name="CSGCombiner" type="CSGCombiner" parent="blockout/labs_3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1, 1.347, -4.731 )
+operation = 2
+
+[node name="CSGCylinder3" type="CSGCylinder" parent="blockout/labs_3/CSGCombiner"]
+transform = Transform( 1, 0, 5.96046e-08, 0, 0.999999, 0, -5.96046e-08, 0, 1, 0, 0, 0 )
+operation = 2
+radius = 1.46034
+height = 6.795
+
+[node name="CSGBox" type="CSGBox" parent="blockout/labs_3/CSGCombiner"]
+transform = Transform( 1, 0, 5.96046e-08, 0, 0.999998, 0, -5.96046e-08, 0, 1, 0.676918, 0.83905, -0.247608 )
+operation = 2
+height = 2.21529
+depth = 3.46115
+
+[node name="CSGCombiner2" type="CSGCombiner" parent="blockout/labs_3"]
+transform = Transform( 0.704584, 0, 0.709619, 0, 0.999999, 0, -0.709619, 0, 0.704584, -1.67571, 1.99125, -0.873215 )
+operation = 2
+
+[node name="CSGCylinder3" type="CSGCylinder" parent="blockout/labs_3/CSGCombiner2"]
+transform = Transform( 1, 0, 5.96046e-08, 0, 0.999999, 0, -5.96046e-08, 0, 1, 0, 0, 0 )
+operation = 2
+radius = 1.46034
+height = 6.795
+
+[node name="CSGBox" type="CSGBox" parent="blockout/labs_3/CSGCombiner2"]
+transform = Transform( 1, 0, 5.96046e-08, 0, 0.999999, 0, -5.96046e-08, 0, 1, 0, 0, 0 )
+operation = 2
+height = 2.21529
+depth = 3.46115
+
+[node name="CSGCombiner3" type="CSGCombiner" parent="blockout/labs_3"]
+transform = Transform( 0.992636, 0, -0.121124, 0, 0.999998, 0, 0.121124, 0, 0.992636, -0.483246, 1.99125, 6.80639 )
+operation = 2
+
+[node name="CSGCylinder3" type="CSGCylinder" parent="blockout/labs_3/CSGCombiner3"]
+transform = Transform( 1, 0, 5.96046e-08, 0, 0.999999, 0, -5.96046e-08, 0, 1, 0, 0, 0 )
+operation = 2
+radius = 1.46034
+height = 6.795
+
+[node name="CSGBox" type="CSGBox" parent="blockout/labs_3/CSGCombiner3"]
+transform = Transform( 1, 0, 5.96046e-08, 0, 0.999999, 0, -5.96046e-08, 0, 1, 0, 0, 0 )
+operation = 2
+height = 2.21529
+depth = 3.46115
+
+[node name="farm_hall_1" type="CSGBox" parent="blockout"]
+transform = Transform( -0.973671, 0, 0.22796, 0, 1, 0, -0.22796, 0, -0.973671, 216.869, 32.1999, 50.6766 )
+operation = 2
+width = 3.70938
+height = 6.47
+depth = 12.0524
+material = ExtResource( 3 )
+
+[node name="farm_to_labs" type="CSGBox" parent="blockout"]
+transform = Transform( 0.22796, 0, 0.973671, 0, 1, 0, -0.973671, 0, 0.22796, 204.287, 24.4153, 65.4894 )
+operation = 2
+width = 10.9318
+height = 7.92984
+depth = 12.0524
+material = ExtResource( 3 )
+
+[node name="farm_hall_5" type="CSGBox" parent="blockout"]
+transform = Transform( -0.973671, 0, 0.22796, 0, 1, 0, -0.22796, 0, -0.973671, 225.659, 19.0205, 52.4849 )
+operation = 2
+width = 14.9529
+height = 15.4912
+depth = 13.6666
+material = ExtResource( 4 )
+
+[node name="CSGCombiner2" type="CSGCombiner" parent="blockout/farm_hall_5"]
+transform = Transform( 0.978298, -0.207139, 0.00508091, 0.207139, 0.977109, -0.0484964, 0.00508091, 0.0484963, 0.998811, -0.587463, -0.337212, -0.888939 )
+operation = 2
+
+[node name="CSGSphere" type="CSGSphere" parent="blockout/farm_hall_5/CSGCombiner2"]
+transform = Transform( 1, -3.33657e-09, -2.98023e-08, 3.235e-08, 1, -7.74484e-09, 2.98023e-08, -6.80068e-09, 1, -6.30118, -5.53313, 1.47526 )
+operation = 2
+radius = 2.0565
+
+[node name="CSGSphere17" type="CSGSphere" parent="blockout/farm_hall_5/CSGCombiner2"]
+transform = Transform( 1, -6.95703e-09, 0, 1.74488e-08, 1, -1.14701e-08, 1.49012e-07, -2.97151e-08, 1, 6.38599, -2.64232, 0.833462 )
+radius = 2.0565
+
+[node name="CSGSphere2" type="CSGSphere" parent="blockout/farm_hall_5/CSGCombiner2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.47919, -5.78795, 1.34363 )
+radius = 2.0565
+
+[node name="CSGSphere3" type="CSGSphere" parent="blockout/farm_hall_5/CSGCombiner2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.33075, -4.20308, 1.33036 )
+radius = 2.0565
+
+[node name="CSGSphere4" type="CSGSphere" parent="blockout/farm_hall_5/CSGCombiner2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.81091, -5.78795, 0.726131 )
+radius = 2.0565
+
+[node name="CSGSphere5" type="CSGSphere" parent="blockout/farm_hall_5/CSGCombiner2"]
+transform = Transform( 1, -1.82455e-08, -1.49012e-08, 3.235e-08, 1, -7.74484e-09, 1.49012e-08, -3.10867e-09, 1, 5.33435, -6.53754, 0.898525 )
+radius = 2.0565
+
+[node name="CSGSphere6" type="CSGSphere" parent="blockout/farm_hall_5/CSGCombiner2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.64177, -4.20308, 0.848049 )
+radius = 2.0565
+
+[node name="CSGSphere7" type="CSGSphere" parent="blockout/farm_hall_5/CSGCombiner2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.58894, -3.12666, 0.908596 )
+radius = 2.0565
+
+[node name="CSGSphere8" type="CSGSphere" parent="blockout/farm_hall_5/CSGCombiner2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.09346, -3.12666, 1.04377 )
+radius = 2.0565
+
+[node name="CSGSphere9" type="CSGSphere" parent="blockout/farm_hall_5/CSGCombiner2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.241943, -1.54179, 1.03051 )
+radius = 2.0565
+
+[node name="CSGSphere10" type="CSGSphere" parent="blockout/farm_hall_5/CSGCombiner2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.03761, 0.267241, 1.20283 )
+radius = 2.0565
+
+[node name="CSGSphere11" type="CSGSphere" parent="blockout/farm_hall_5/CSGCombiner2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35532, 0.267241, 1.33802 )
+radius = 2.0565
+
+[node name="CSGSphere12" type="CSGSphere" parent="blockout/farm_hall_5/CSGCombiner2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.20683, -1.20326, 1.32474 )
+radius = 2.0565
+
+[node name="CSGSphere16" type="CSGSphere" parent="blockout/farm_hall_5/CSGCombiner2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.54659, -2.19857, 1.49526 )
+radius = 2.0565
+
+[node name="CSGSphere13" type="CSGSphere" parent="blockout/farm_hall_5/CSGCombiner2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0345, 0.267241, 1.32331 )
+radius = 2.0565
+
+[node name="CSGSphere14" type="CSGSphere" parent="blockout/farm_hall_5/CSGCombiner2"]
+transform = Transform( 1, -6.95703e-09, 0, 1.74488e-08, 1, -1.14701e-08, 1.49012e-07, -2.97151e-08, 1, -3.38608, 1.60586, 0.660732 )
+radius = 2.0565
+
+[node name="CSGSphere15" type="CSGSphere" parent="blockout/farm_hall_5/CSGCombiner2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.86523, -1.20326, 1.44522 )
+radius = 2.0565
+
+[node name="farm_hall_6" type="CSGBox" parent="blockout"]
+transform = Transform( -0.973671, 0, 0.22796, 0, 1, 0, -0.22796, 0, -0.973671, 233.262, 19.0205, 18.7208 )
+operation = 2
+width = 13.6544
+height = 15.4912
+depth = 12.0524
+material = ExtResource( 4 )
+
+[node name="CSGCombiner" type="CSGCombiner" parent="blockout/farm_hall_6"]
+operation = 2
+
+[node name="CSGSphere" type="CSGSphere" parent="blockout/farm_hall_6/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.16158, -5.78795, 1.20845 )
+operation = 2
+radius = 2.0565
+
+[node name="CSGSphere2" type="CSGSphere" parent="blockout/farm_hall_6/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.47919, -5.78795, 1.34363 )
+radius = 2.0565
+
+[node name="CSGSphere3" type="CSGSphere" parent="blockout/farm_hall_6/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.33075, -4.20308, 1.33036 )
+radius = 2.0565
+
+[node name="CSGSphere4" type="CSGSphere" parent="blockout/farm_hall_6/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.81091, -5.78795, 0.726131 )
+radius = 2.0565
+
+[node name="CSGSphere5" type="CSGSphere" parent="blockout/farm_hall_6/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.49326, -5.78795, 0.861328 )
+radius = 2.0565
+
+[node name="CSGSphere6" type="CSGSphere" parent="blockout/farm_hall_6/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.64177, -4.20308, 0.848049 )
+radius = 2.0565
+
+[node name="CSGSphere7" type="CSGSphere" parent="blockout/farm_hall_6/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.58894, -3.12666, 0.908596 )
+radius = 2.0565
+
+[node name="CSGSphere8" type="CSGSphere" parent="blockout/farm_hall_6/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.09346, -3.12666, 1.04377 )
+radius = 2.0565
+
+[node name="CSGSphere9" type="CSGSphere" parent="blockout/farm_hall_6/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.241943, -1.54179, 1.03051 )
+radius = 2.0565
+
+[node name="CSGSphere10" type="CSGSphere" parent="blockout/farm_hall_6/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.03761, 0.267241, 1.20283 )
+radius = 2.0565
+
+[node name="CSGSphere11" type="CSGSphere" parent="blockout/farm_hall_6/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35532, 0.267241, 1.33802 )
+radius = 2.0565
+
+[node name="CSGSphere12" type="CSGSphere" parent="blockout/farm_hall_6/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.20683, -1.20326, 1.32474 )
+radius = 2.0565
+
+[node name="CSGSphere16" type="CSGSphere" parent="blockout/farm_hall_6/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.54659, -2.19857, 1.49526 )
+radius = 2.0565
+
+[node name="CSGSphere13" type="CSGSphere" parent="blockout/farm_hall_6/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0345, 0.267241, 1.32331 )
+radius = 2.0565
+
+[node name="CSGSphere14" type="CSGSphere" parent="blockout/farm_hall_6/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.71681, 0.267241, 1.45849 )
+radius = 2.0565
+
+[node name="CSGSphere15" type="CSGSphere" parent="blockout/farm_hall_6/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.86523, -1.20326, 1.44522 )
+radius = 2.0565
+
+[node name="farm_hall_2" type="CSGBox" parent="blockout"]
+transform = Transform( -0.973671, 0, 0.22796, 0, 1, 0, -0.22796, 0, -0.973671, 224.848, 32.1999, 52.5447 )
+operation = 2
+width = 3.70938
+height = 6.47
+depth = 12.0524
+material = ExtResource( 3 )
+
+[node name="farm_hall_3" type="CSGBox" parent="blockout"]
+transform = Transform( -0.973671, 0, 0.22796, 0, 1, 0, -0.22796, 0, -0.973671, 224.746, 32.1999, 17.0294 )
+operation = 2
+width = 3.70938
+height = 6.47
+depth = 12.0524
+material = ExtResource( 3 )
+
+[node name="farm_hall_4" type="CSGBox" parent="blockout"]
+transform = Transform( -0.973671, 0, 0.22796, 0, 1, 0, -0.22796, 0, -0.973671, 232.726, 32.1999, 18.8976 )
+operation = 2
+width = 3.70938
+height = 6.47
+depth = 12.0524
+material = ExtResource( 3 )
+
+[node name="farm_1" type="CSGCombiner" parent="blockout"]
+transform = Transform( 0.22796, 0, 0.973671, 0, 1, 0, -0.973671, 0, 0.22796, 221.288, 28.6605, 69.5643 )
+operation = 2
+
+[node name="farm" type="CSGBox" parent="blockout/farm_1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.91107, 13.4845 )
+width = 24.1798
+height = 29.3278
+depth = 50.4689
+material = ExtResource( 4 )
+
+[node name="catwalk_1" type="CSGBox" parent="blockout/farm_1"]
+transform = Transform( -4.47035e-08, 0, 1, 0, 1, 0, -1, 0, -4.47035e-08, 0.0689049, 0, -5.9579 )
+operation = 2
+width = 16.5728
+height = 0.608009
+depth = 24.4615
+material = ExtResource( 3 )
+
+[node name="catwalk_4" type="CSGBox" parent="blockout/farm_1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.116745, 0, 7.9557 )
+operation = 2
+width = 3.70938
+height = 0.608009
+depth = 21.1884
+material = ExtResource( 3 )
+
+[node name="catwalk_3" type="CSGBox" parent="blockout/farm_1"]
+transform = Transform( 0.00959793, -0.0663103, 0.997753, -0.283227, 0.956758, 0.0663103, -0.959005, -0.283227, -0.00959802, 0.098835, -5.21431, 30.5121 )
+operation = 2
+width = 16.8401
+height = 0.608009
+depth = 28.4073
+material = ExtResource( 3 )
+
+[node name="OmniLight4" type="OmniLight" parent="blockout/farm_1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.941711, -13.3951, 13.4845 )
+omni_range = 30.5365
+
+[node name="OmniLight5" type="OmniLight" parent="blockout/farm_1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.941711, 8.41998, 13.4845 )
+omni_range = 30.5365
+
+[node name="farm_2" type="CSGCombiner" parent="blockout"]
+transform = Transform( 0.22796, 0, 0.973671, 0, 1, 0, -0.973671, 0, 0.22796, 229.305, 28.6605, 35.3223 )
+operation = 2
+
+[node name="farm" type="CSGBox" parent="blockout/farm_2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.91107, 13.4845 )
+width = 24.1798
+height = 29.3278
+depth = 50.4689
+material = ExtResource( 4 )
+
+[node name="catwalk_3" type="CSGBox" parent="blockout/farm_2"]
+transform = Transform( 0.0910613, -0.18793, 0.977953, -0.881044, 0.442545, 0.167081, -0.464188, -0.876832, -0.125276, 0.0927391, -16.5731, 33.2041 )
+operation = 2
+width = 10.1581
+height = 0.608009
+depth = 24.4615
+material = ExtResource( 3 )
+
+[node name="OmniLight4" type="OmniLight" parent="blockout/farm_2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.941711, -13.3951, 13.4845 )
+omni_range = 30.5365
+
+[node name="OmniLight5" type="OmniLight" parent="blockout/farm_2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.941711, 8.41998, 13.4845 )
+omni_range = 30.5365
+
+[node name="CSGBox" type="CSGBox" parent="blockout/farm_2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0699, -0.178413, -4.08356 )
+operation = 2
+height = 0.959184
+depth = 13.6959
+
+[node name="CSGBox2" type="CSGBox" parent="blockout/farm_2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0778, -0.178413, -4.02843 )
+operation = 2
+height = 0.959184
+depth = 13.6959
+
+[node name="farm_3" type="CSGCombiner" parent="blockout"]
+transform = Transform( 0.22796, 0, 0.973671, 0, 1, 0, -0.973671, 0, 0.22796, 237.008, 28.6605, 2.42097 )
+operation = 2
+
+[node name="farm" type="CSGBox" parent="blockout/farm_3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.91107, 13.4845 )
+width = 24.1798
+height = 29.3278
+depth = 50.4689
+material = ExtResource( 4 )
+
+[node name="OmniLight4" type="OmniLight" parent="blockout/farm_3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.941711, -13.3951, 13.4845 )
+omni_range = 30.5365
+
+[node name="OmniLight5" type="OmniLight" parent="blockout/farm_3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.941711, 8.41998, 13.4845 )
+omni_range = 30.5365
+
+[node name="catwalk_1" type="CSGBox" parent="blockout/farm_3"]
+transform = Transform( -4.47035e-08, 0, 1, 0, 1, 0, -1, 0, -4.47035e-08, 0.00458145, 0, -10.2837 )
+operation = 2
+width = 7.04241
+height = 0.608009
+depth = 24.4615
+material = ExtResource( 3 )
+
+[node name="catwalk_2" type="CSGBox" parent="blockout/farm_3"]
+transform = Transform( -4.47035e-08, 0, 1, 0, 1, 0, -1, 0, -4.47035e-08, 0.116753, 0, -0.374054 )
+operation = 2
+width = 3.70938
+height = 0.608009
+depth = 24.4615
+material = ExtResource( 3 )
+
+[node name="catwalk_4" type="CSGBox" parent="blockout/farm_3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.116749, 0, 7.95569 )
+operation = 2
+width = 3.70938
+height = 0.608009
+depth = 35.4721
+material = ExtResource( 3 )
+
+[node name="catwalk_3" type="CSGBox" parent="blockout/farm_3"]
+transform = Transform( -4.47035e-08, 0, 1, 0, 1, 0, -1, 0, -4.47035e-08, -0.0320244, 0, 33.9208 )
+operation = 2
+width = 16.8401
+height = 0.608009
+depth = 24.4615
+material = ExtResource( 3 )
+
+[node name="descent_to_farms" type="CSGCylinder" parent="blockout"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 303.691, 20.8619, 2.00695 )
+operation = 2
+radius = 8.00933
+height = 22.8516
+
+[node name="CSGBox" type="CSGBox" parent="blockout/descent_to_farms"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76596, 5.51883, 5.28468 )
+operation = 2
+width = 3.79511
+height = 1.35135
+depth = 3.87295
+
+[node name="CSGBox2" type="CSGBox" parent="blockout/descent_to_farms"]
+transform = Transform( 0.976833, 0, 0.214002, 0, 1, 0, -0.214002, 0, 0.976833, -4.12018, 1.7146, 5.64498 )
+operation = 2
+width = 4.62935
+height = 1.35135
+depth = 5.99386
+
+[node name="CSGBox3" type="CSGBox" parent="blockout/descent_to_farms"]
+transform = Transform( 0.902908, 0, 0.429834, 0, 1, 0, -0.429834, 0, 0.902908, -6.55301, -1.23389, -3.27395 )
+operation = 2
+width = 5.87385
+height = 1.35135
+depth = 5.1364
+
+[node name="CSGBox4" type="CSGBox" parent="blockout/descent_to_farms"]
+transform = Transform( 0.853914, 0, 0.520414, 0, 1, 0, -0.520414, 0, 0.853914, 0.711395, -5.1375, -6.8504 )
+operation = 2
+width = 5.87385
+height = 1.35135
+depth = 3.68774
+
+[node name="CSGBox5" type="CSGBox" parent="blockout/descent_to_farms"]
+transform = Transform( 0.519922, 0, 0.854214, 0, 1, 0, -0.854214, 0, 0.519922, 6.6875, -8.7194, 0.115674 )
+operation = 2
+width = 5.87385
+height = 1.35135
+depth = 3.68774
+
+[node name="farm_drains" type="CSGBox" parent="blockout"]
+transform = Transform( 0.976084, 0, -0.217394, 0, 1, 0, 0.217394, 0, 0.976084, 276.39, 11.771, 45.7424 )
+operation = 2
+width = 2.56047
+height = 4.32685
+depth = 94.0601
+
+[node name="CSGBox" type="CSGBox" parent="blockout/farm_drains"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.06088, -0.44645, -22.8252 )
+width = 10.5041
+height = 3.442
+depth = 2.44012
+
+[node name="CSGBox2" type="CSGBox" parent="blockout/farm_drains"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.75528, -0.385235, 10.7955 )
+width = 10.5041
+height = 3.5
+depth = 2.82137
+
+[node name="CSGBox3" type="CSGBox" parent="blockout/farm_drains"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.80661, -0.612559, 43.6103 )
+width = 10.5041
+height = 3.015
+depth = 2.31577
+
+[node name="labs_transition" type="CSGBox" parent="blockout"]
+transform = Transform( 0.944239, 0, -0.329262, 0, 1, 0, 0.329262, 0, 0.944239, 284.43, 39.2804, 61.0678 )
+operation = 2
+width = 4.989
+height = 4.76083
+depth = 4.0
+material = ExtResource( 5 )
+
+[node name="CSGBox" type="CSGBox" parent="blockout/labs_transition"]
+transform = Transform( 1, 0, 0, 0, 0.5, -0.866025, 0, 0.866025, 0.5, -0.196564, 6.88186, 13.9969 )
+width = 4.989
+height = 30.1922
+depth = 4.0
+material = ExtResource( 5 )
+
+[node name="CSGBox2" type="CSGBox" parent="blockout/labs_transition"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.563599, 17.1253, 30.7591 )
+width = 8.27643
+height = 9.14681
+depth = 10.1277
+material = ExtResource( 5 )
+
+[node name="CSGBox3" type="CSGBox" parent="blockout/labs_transition"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.63309, 23.1824, 30.6845 )
+width = 24.428
+height = 5.51359
+depth = 10.2747
+
+[node name="CSGBox4" type="CSGBox" parent="blockout/labs_transition"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.31558, 14.0577, 34.5662 )
+operation = 2
+width = 5.98136
+height = 5.24987
+depth = 5.65479
+
+[node name="labs_entrance" type="CSGBox" parent="blockout"]
+transform = Transform( 0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, 263.816, 62.9808, 55.823 )
+operation = 2
+width = 11.4694
+height = 6.26625
+depth = 35.8612
+
+[node name="CSGBox" type="CSGBox" parent="blockout/labs_entrance"]
+transform = Transform( 1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, 1, -4.98911, -2.48902, 10.9235 )
+operation = 2
+width = 5.77243
+height = 1.39014
+
+[node name="CSGBox2" type="CSGBox" parent="blockout/labs_entrance"]
+transform = Transform( 1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, 1, 5.25699, -2.48902, 10.9026 )
+operation = 2
+width = 5.77243
+height = 1.39014
+
+[node name="CSGBox3" type="CSGBox" parent="blockout/labs_entrance"]
+transform = Transform( 1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, 1, -5.04163, -2.48902, -10.1279 )
+operation = 2
+width = 5.77243
+height = 1.39014
+
+[node name="CSGBox4" type="CSGBox" parent="blockout/labs_entrance"]
+transform = Transform( 1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, 1, 5.20447, -2.48902, -10.1489 )
+operation = 2
+width = 5.77243
+height = 1.39014
+
+[node name="spawn" type="Spatial" parent="." groups=[
+"default_spawn",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 234.956, 58.3551, 49.2796 )
+
+[node name="labels" type="Node" parent="."]
+
+[node name="missle silo" parent="labels" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00446987, -20.3189, -0.050005 )
+text = "Final Boss Missle Silo. Shoot up at SAM first, then platform up and shoot down at it. Exit via vent in the top of the shaft."
+color = Color( 1, 0, 0, 1 )
+size = 32
+billboard_size = Vector2( 750, 750 )
+
+[node name="hanger" parent="labels" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.0689, -20.3189, -0.050005 )
+text = "Hanger Bay (lots of drones in sarcophagi waiting to launch)"
+color = Color( 1, 0, 0, 1 )
+size = 32
+billboard_size = Vector2( 750, 750 )

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Marcos H. Bolanos - Verita.mp3-b47a129bca812dae783e1d82d534b5fb.mp3str"
+
+[deps]
+
+source_file="res://audio/Marcos H. Bolanos - Verita.mp3"
+dest_files=[ "res://.import/Marcos H. Bolanos - Verita.mp3-b47a129bca812dae783e1d82d534b5fb.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

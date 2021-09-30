@@ -1,0 +1,147 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/tiles/moss_farm_thing.png" type="Texture" id=1]
+[ext_resource path="res://assets/entities/jump-mushroom.aseprite" type="SpriteFrames" id=2]
+[ext_resource path="res://entities/boost_mushrooms.gd" type="Script" id=3]
+[ext_resource path="res://entities/enemy_die.tscn" type="PackedScene" id=4]
+
+[sub_resource type="PlaneMesh" id=1]
+size = Vector2( 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.504305, 0.186626, 0.492211 )
+
+[sub_resource type="CylinderShape" id=4]
+radius = 0.56026
+height = 37.688
+
+[sub_resource type="ParticlesMaterial" id=5]
+lifetime_randomness = 1.0
+emission_shape = 2
+emission_box_extents = Vector3( 0.5, 0.2, 0.5 )
+direction = Vector3( 0, 1, 0 )
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 1.0
+linear_accel = 4.0
+radial_accel = 0.1
+color = Color( 0.419608, 0.286275, 0.0941176, 1 )
+hue_variation = 0.26
+hue_variation_random = 0.69
+
+[sub_resource type="SpatialMaterial" id=6]
+flags_unshaded = true
+flags_use_point_size = true
+vertex_color_use_as_albedo = true
+params_point_size = 4.0
+
+[sub_resource type="PointMesh" id=7]
+material = SubResource( 6 )
+
+[node name="boost_mushrooms" type="Spatial"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
+script = ExtResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="mushroom_1" type="AnimatedSprite3D" parent="."]
+transform = Transform( 0.945132, 0, -0.32669, 0, 1, 0, 0.32669, 0, 0.945132, -0.036946, 0.164095, -0.103058 )
+frames = ExtResource( 2 )
+
+[node name="mushroom_2" type="AnimatedSprite3D" parent="."]
+transform = Transform( 0.712308, 0, -0.701867, 0, 1, 0, 0.701867, 0, 0.712308, -0.251087, 0.164095, 0.36299 )
+frames = ExtResource( 2 )
+
+[node name="mushroom_3" type="AnimatedSprite3D" parent="."]
+transform = Transform( 0.712308, 0, -0.701867, 0, 1, 0, 0.701867, 0, 0.712308, -0.172502, 0.164095, 0.192758 )
+frames = ExtResource( 2 )
+
+[node name="mushroom_4" type="AnimatedSprite3D" parent="."]
+transform = Transform( 0.85862, 0, 0.512612, 0, 1, 0, -0.512612, 0, 0.85862, -0.311696, 0.164095, -0.197864 )
+frames = ExtResource( 2 )
+
+[node name="mushroom_5" type="AnimatedSprite3D" parent="."]
+transform = Transform( 0.987002, 0, 0.160708, 0, 1, 0, -0.160708, 0, 0.987002, 0.0239675, 0.164095, 0.376295 )
+frames = ExtResource( 2 )
+
+[node name="mushroom_6" type="AnimatedSprite3D" parent="."]
+transform = Transform( 0.988113, 0, 0.153728, 0, 1, 0, -0.153728, 0, 0.988113, 0.22836, 0.164095, 0.420685 )
+frames = ExtResource( 2 )
+
+[node name="mushroom_7" type="AnimatedSprite3D" parent="."]
+transform = Transform( 0.980105, 0, -0.198478, 0, 1, 0, 0.198478, 0, 0.980105, -0.00560227, 0.164095, -0.277063 )
+frames = ExtResource( 2 )
+
+[node name="mushroom_8" type="AnimatedSprite3D" parent="."]
+transform = Transform( 0.235838, 0, -0.971793, 0, 1, 0, 0.971793, 0, 0.235838, 0.261191, 0.164095, -0.281353 )
+frames = ExtResource( 2 )
+
+[node name="mushroom_9" type="AnimatedSprite3D" parent="."]
+transform = Transform( -0.954146, 0, 0.299341, 0, 1, 0, -0.299341, 0, -0.954146, -0.0300161, 0.164095, 0.0754767 )
+frames = ExtResource( 2 )
+
+[node name="mushroom_10" type="AnimatedSprite3D" parent="."]
+transform = Transform( 0.89205, 0, 0.451937, 0, 1, 0, -0.451937, 0, 0.89205, 0.363782, 0.164095, 0.155454 )
+frames = ExtResource( 2 )
+
+[node name="mushroom_11" type="AnimatedSprite3D" parent="."]
+transform = Transform( 0.89205, 0, 0.451937, 0, 1, 0, -0.451937, 0, 0.89205, 0.0987994, 0.164095, 0.2333 )
+frames = ExtResource( 2 )
+
+[node name="mushroom_12" type="AnimatedSprite3D" parent="."]
+transform = Transform( 0.123099, 0, 0.992394, 0, 1, 0, -0.992394, 0, 0.123099, -0.373933, 0.164095, 0.175275 )
+frames = ExtResource( 2 )
+
+[node name="mushroom_13" type="AnimatedSprite3D" parent="."]
+transform = Transform( 0.851333, 0, -0.524625, 0, 1, 0, 0.524625, 0, 0.851333, 0.203438, 0.164095, -0.127375 )
+frames = ExtResource( 2 )
+
+[node name="mushroom_14" type="AnimatedSprite3D" parent="."]
+transform = Transform( -0.0148174, 0, 0.99989, 0, 1, 0, -0.99989, 0, -0.0148174, 0.387798, 0.164095, -0.094168 )
+frames = ExtResource( 2 )
+
+[node name="mushroom_15" type="AnimatedSprite3D" parent="."]
+transform = Transform( 0.96255, 0, -0.271104, 0, 1, 0, 0.271104, 0, 0.96255, 0.236613, 0.164095, 0.0410969 )
+frames = ExtResource( 2 )
+
+[node name="mushroom_17" type="AnimatedSprite3D" parent="."]
+transform = Transform( 0.999846, 0, -0.0175221, 0, 1, 0, 0.0175221, 0, 0.999846, -0.308122, 0.164095, -0.0417562 )
+frames = ExtResource( 2 )
+
+[node name="mushroom_16" type="AnimatedSprite3D" parent="."]
+transform = Transform( 0.996324, 0, -0.0856604, 0, 1, 0, 0.0856604, 0, 0.996324, -0.113701, 0.164095, -0.407087 )
+frames = ExtResource( 2 )
+
+[node name="Area" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.190237, 0 )
+shape = SubResource( 3 )
+
+[node name="boost_area" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="boost_area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.757, 0 )
+shape = SubResource( 4 )
+
+[node name="close_timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="particles" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.298383, 0 )
+emitting = true
+amount = 1000
+lifetime = 6.0
+one_shot = false
+explosiveness = 0.0
+process_material = SubResource( 5 )
+draw_pass_1 = SubResource( 7 )
+
+[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
+[connection signal="timeout" from="close_timer" to="." method="_on_close_timer_timeout"]

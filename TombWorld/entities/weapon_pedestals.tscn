@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/models/weapon_pedestals.gltf" type="PackedScene" id=1]
+[ext_resource path="res://entities/weapon_pedestals.gd" type="Script" id=2]
+[ext_resource path="res://utils/text_3d.tscn" type="PackedScene" id=3]
+
+[sub_resource type="CylinderShape" id=1]
+radius = 0.440342
+height = 1.33858
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_transparent = true
+params_cull_mode = 2
+params_depth_draw_mode = 1
+params_use_alpha_scissor = true
+params_alpha_scissor_threshold = 0.98
+
+[sub_resource type="QuadMesh" id=3]
+material = SubResource( 2 )
+size = Vector2( 0.75, 0.75 )
+
+[node name="weapon_pedestals" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="weapon_pedistile" parent="." instance=ExtResource( 1 )]
+transform = Transform( 13.9947, 0, 0, 0, 13.9947, 0, 0, 0, 13.9947, 0.000213251, 0.546278, -9.6485e-05 )
+
+[node name="StaticBody" type="StaticBody" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0010922, 1.42933, -0.000935823 )
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.000935823, -0.761528, -0.0010922 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.41074e-06, 0.869503, 0.00215565 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="text_3d" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000354409, -0.576786, 0.00299317 )
+text = "[E to collect]"
+size = 128
+billboard_size = Vector2( 2000, 2000 )

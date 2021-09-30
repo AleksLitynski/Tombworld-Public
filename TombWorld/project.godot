@@ -1,0 +1,437 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Bullet",
+"class": "Arrow",
+"language": "GDScript",
+"path": "res://entities/bullets/arrow.gd"
+}, {
+"base": "BTDecorator",
+"class": "BTAlways",
+"language": "GDScript",
+"path": "res://addons/behavior_tree/src/btnodes/decorators/bt_always.gd"
+}, {
+"base": "BTConditional",
+"class": "BTCanSeePlayer",
+"language": "GDScript",
+"path": "res://entities/behaviors/bt_cansee_player.gd"
+}, {
+"base": "BTNode",
+"class": "BTComposite",
+"language": "GDScript",
+"path": "res://addons/behavior_tree/src/btnodes/bt_composite.gd"
+}, {
+"base": "BTDecorator",
+"class": "BTConditional",
+"language": "GDScript",
+"path": "res://addons/behavior_tree/src/btnodes/decorators/bt_conditional.gd"
+}, {
+"base": "BTNode",
+"class": "BTDecorator",
+"language": "GDScript",
+"path": "res://addons/behavior_tree/src/btnodes/bt_decorator.gd"
+}, {
+"base": "BTConditional",
+"class": "BTDistanceToPlayer",
+"language": "GDScript",
+"path": "res://entities/behaviors/bt_distance_to_player.gd"
+}, {
+"base": "BTNode",
+"class": "BTGordonShoot",
+"language": "GDScript",
+"path": "res://entities/behaviors/gordon/gordon_shoot.gd"
+}, {
+"base": "BTDecorator",
+"class": "BTGuard",
+"language": "GDScript",
+"path": "res://addons/behavior_tree/src/btnodes/decorators/bt_guard.gd"
+}, {
+"base": "BTNode",
+"class": "BTHeatherSpray",
+"language": "GDScript",
+"path": "res://entities/behaviors/heather/spray.gd"
+}, {
+"base": "BTNode",
+"class": "BTLeaf",
+"language": "GDScript",
+"path": "res://addons/behavior_tree/src/btnodes/bt_leaf.gd"
+}, {
+"base": "BTLeaf",
+"class": "BTLog",
+"language": "GDScript",
+"path": "res://entities/behaviors/bt_log.gd"
+}, {
+"base": "BTNode",
+"class": "BTMummyMelee",
+"language": "GDScript",
+"path": "res://entities/behaviors/mummy/melee.gd"
+}, {
+"base": "BTNode",
+"class": "BTMummyShoot",
+"language": "GDScript",
+"path": "res://entities/behaviors/mummy/shoot.gd"
+}, {
+"base": "Node",
+"class": "BTNode",
+"language": "GDScript",
+"path": "res://addons/behavior_tree/src/bt_node.gd"
+}, {
+"base": "BTComposite",
+"class": "BTParallel",
+"language": "GDScript",
+"path": "res://addons/behavior_tree/src/btnodes/composites/bt_parallel.gd"
+}, {
+"base": "BTConditional",
+"class": "BTRandom",
+"language": "GDScript",
+"path": "res://entities/behaviors/bt_random.gd"
+}, {
+"base": "BTRepeat",
+"class": "BTRandomRepeat",
+"language": "GDScript",
+"path": "res://entities/behaviors/bt_random_repeat.gd"
+}, {
+"base": "BTSelector",
+"class": "BTRandomSelector",
+"language": "GDScript",
+"path": "res://addons/behavior_tree/src/btnodes/composites/bt_random_selector.gd"
+}, {
+"base": "BTSequence",
+"class": "BTRandomSequence",
+"language": "GDScript",
+"path": "res://addons/behavior_tree/src/btnodes/composites/bt_random_sequence.gd"
+}, {
+"base": "BTNode",
+"class": "BTRandomWait",
+"language": "GDScript",
+"path": "res://entities/behaviors/bt_random_wait.gd"
+}, {
+"base": "BTDecorator",
+"class": "BTRepeat",
+"language": "GDScript",
+"path": "res://addons/behavior_tree/src/btnodes/decorators/bt_repeat.gd"
+}, {
+"base": "BTDecorator",
+"class": "BTRepeatUntil",
+"language": "GDScript",
+"path": "res://addons/behavior_tree/src/btnodes/decorators/bt_repeat_until.gd"
+}, {
+"base": "BTDecorator",
+"class": "BTRevert",
+"language": "GDScript",
+"path": "res://addons/behavior_tree/src/btnodes/decorators/bt_revert.gd"
+}, {
+"base": "BTComposite",
+"class": "BTSelector",
+"language": "GDScript",
+"path": "res://addons/behavior_tree/src/btnodes/composites/bt_selector.gd"
+}, {
+"base": "BTComposite",
+"class": "BTSequence",
+"language": "GDScript",
+"path": "res://addons/behavior_tree/src/btnodes/composites/bt_sequence.gd"
+}, {
+"base": "BTNode",
+"class": "BTStalk",
+"language": "GDScript",
+"path": "res://entities/behaviors/stalk.gd"
+}, {
+"base": "BTNode",
+"class": "BTTheGordonShoot",
+"language": "GDScript",
+"path": "res://entities/enemies/BTTheGorgonShoot.gd"
+}, {
+"base": "BTLeaf",
+"class": "BTWait",
+"language": "GDScript",
+"path": "res://addons/behavior_tree/src/btnodes/leaves/bt_wait.gd"
+}, {
+"base": "Node",
+"class": "BehaviorTree",
+"language": "GDScript",
+"path": "res://addons/behavior_tree/src/behavior_tree.gd"
+}, {
+"base": "Node",
+"class": "Blackboard",
+"language": "GDScript",
+"path": "res://addons/behavior_tree/src/blackboard.gd"
+}, {
+"base": "KinematicBody",
+"class": "Bullet",
+"language": "GDScript",
+"path": "res://entities/bullets/Bullet.gd"
+}, {
+"base": "Node",
+"class": "DataTables",
+"language": "GDScript",
+"path": "res://data_tables.gd"
+}, {
+"base": "Node",
+"class": "DialogTag",
+"language": "GDScript",
+"path": "res://utils/dialog_tag.gd"
+}, {
+"base": "Node",
+"class": "Door",
+"language": "GDScript",
+"path": "res://entities/doors/door.gd"
+}, {
+"base": "KinematicBody",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://entities/enemies/enemy.gd"
+}, {
+"base": "AnimatedSprite3D",
+"class": "FacingSprite",
+"language": "GDScript",
+"path": "res://entities/facing_sprite.gd"
+}, {
+"base": "Bullet",
+"class": "FourColorBullet",
+"language": "GDScript",
+"path": "res://entities/bullets/four_color_bullet.gd"
+}, {
+"base": "Node2D",
+"class": "Gun",
+"language": "GDScript",
+"path": "res://guns/gun.gd"
+}, {
+"base": "Node",
+"class": "LightActivator",
+"language": "GDScript",
+"path": "res://utils/light_activator.gd"
+}, {
+"base": "Reference",
+"class": "ListRectifier",
+"language": "GDScript",
+"path": "res://utils/list_rectifier.gd"
+}, {
+"base": "Spatial",
+"class": "Text3d",
+"language": "GDScript",
+"path": "res://utils/text_3d.gd"
+} ]
+_global_script_class_icons={
+"Arrow": "",
+"BTAlways": "res://addons/behavior_tree/icons/btalways.svg",
+"BTCanSeePlayer": "",
+"BTComposite": "res://addons/behavior_tree/icons/btcomposite.svg",
+"BTConditional": "res://addons/behavior_tree/icons/btconditional.png",
+"BTDecorator": "res://addons/behavior_tree/icons/btdecorator.svg",
+"BTDistanceToPlayer": "",
+"BTGordonShoot": "",
+"BTGuard": "res://addons/behavior_tree/icons/btguard.svg",
+"BTHeatherSpray": "",
+"BTLeaf": "res://addons/behavior_tree/icons/btleaf.svg",
+"BTLog": "",
+"BTMummyMelee": "",
+"BTMummyShoot": "",
+"BTNode": "res://addons/behavior_tree/icons/btnode.svg",
+"BTParallel": "res://addons/behavior_tree/icons/btparallel.svg",
+"BTRandom": "",
+"BTRandomRepeat": "",
+"BTRandomSelector": "res://addons/behavior_tree/icons/btrndselector.svg",
+"BTRandomSequence": "res://addons/behavior_tree/icons/btrndsequence.svg",
+"BTRandomWait": "",
+"BTRepeat": "res://addons/behavior_tree/icons/btrepeat.svg",
+"BTRepeatUntil": "res://addons/behavior_tree/icons/btrepeatuntil.svg",
+"BTRevert": "res://addons/behavior_tree/icons/btrevert.svg",
+"BTSelector": "res://addons/behavior_tree/icons/btselector.svg",
+"BTSequence": "res://addons/behavior_tree/icons/btsequence.svg",
+"BTStalk": "",
+"BTTheGordonShoot": "",
+"BTWait": "res://addons/behavior_tree/icons/btwait.svg",
+"BehaviorTree": "res://addons/behavior_tree/icons/bt.svg",
+"Blackboard": "res://addons/behavior_tree/icons/blackboard.svg",
+"Bullet": "",
+"DataTables": "",
+"DialogTag": "",
+"Door": "",
+"Enemy": "",
+"FacingSprite": "",
+"FourColorBullet": "",
+"Gun": "",
+"LightActivator": "",
+"ListRectifier": "",
+"Text3d": ""
+}
+
+[application]
+
+config/name="TombWorld"
+run/main_scene="res://main.tscn"
+config/icon="res://icon.png"
+
+[aseprite_animation_importer]
+
+aseprite_executable_path="/home/ajl/.local/bin/aseprite"
+
+[autoload]
+
+G="*res://global.gd"
+
+[display]
+
+window/size/width=1200
+window/size/height=900
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/AsepriteWizard/plugin.cfg", "res://addons/CSGExport/plugin.cfg", "res://addons/behavior_tree/plugin.cfg", "res://addons/scatter/plugin.cfg" )
+
+[global]
+
+search=false
+
+[importer_defaults]
+
+texture={
+"flags/filter": false
+}
+scene={
+"materials/storage": 0,
+"nodes/custom_script": "res://utils/gltf_import_cleanup.gd"
+}
+texture_3d={
+"flags/filter": false,
+"flags/mipmaps": false
+}
+
+[input]
+
+ui_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":12,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"unicode":0,"echo":false,"script":null)
+ ]
+}
+ui_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":13,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
+ ]
+}
+move_forward={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"unicode":0,"echo":false,"script":null)
+ ]
+}
+move_back={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
+ ]
+}
+strafe_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
+ ]
+}
+strafe_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
+ ]
+}
+jump={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
+ ]
+}
+pause={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"unicode":0,"echo":false,"script":null)
+ ]
+}
+dash={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777237,"unicode":0,"echo":false,"script":null)
+ ]
+}
+toggle_debug={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":85,"unicode":0,"echo":false,"script":null)
+ ]
+}
+use={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"unicode":0,"echo":false,"script":null)
+ ]
+}
+toggle_noclip={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":74,"unicode":0,"echo":false,"script":null)
+ ]
+}
+fire={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+weapon_1={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":49,"unicode":0,"echo":false,"script":null)
+ ]
+}
+weapon_2={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":50,"unicode":0,"echo":false,"script":null)
+ ]
+}
+weapon_3={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":51,"unicode":0,"echo":false,"script":null)
+ ]
+}
+weapon_4={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":52,"unicode":0,"echo":false,"script":null)
+ ]
+}
+weapon_5={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":53,"unicode":0,"echo":false,"script":null)
+ ]
+}
+previous_weapon={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":5,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+next_weapon={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":4,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+action_select_mode={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777238,"unicode":0,"echo":false,"script":null)
+ ]
+}
+action={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+
+[layer_names]
+
+3d_physics/layer_1="world"
+3d_physics/layer_2="bullets"
+3d_physics/layer_3="collectables"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

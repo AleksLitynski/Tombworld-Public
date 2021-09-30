@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Pariah_-_Zodiac.mp3-a698ab49b99965ee1013c1e627deecc8.mp3str"
+
+[deps]
+
+source_file="res://audio/Pariah_-_Zodiac.mp3"
+dest_files=[ "res://.import/Pariah_-_Zodiac.mp3-a698ab49b99965ee1013c1e627deecc8.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/guns/scangun/scangun.res" type="SpriteFrames" id=1]
+[ext_resource path="res://guns/scanner.gd" type="Script" id=2]
+[ext_resource path="res://audio/sfx/scan.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/guns/scangun/scangun_shooty.aseprite" type="SpriteFrames" id=4]
+
+[node name="Scanner" type="Node2D"]
+scale = Vector2( 6, 6 )
+script = ExtResource( 2 )
+
+[node name="gun_sprite" type="AnimatedSprite" parent="."]
+frames = ExtResource( 1 )
+frame = 2
+speed_scale = 0.2
+centered = false
+
+[node name="shoot_sprite" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 1, 1, 0.686275 )
+frames = ExtResource( 4 )
+speed_scale = 0.8
+centered = false
+
+[node name="bullet_origin" type="Node2D" parent="."]
+position = Vector2( 138.76, 117.225 )
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -5.0

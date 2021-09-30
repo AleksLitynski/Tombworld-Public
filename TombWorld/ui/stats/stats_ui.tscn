@@ -1,0 +1,293 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/ui/health-ticks.png" type="Texture" id=1]
+[ext_resource path="res://assets/ui/toom-scroll.png" type="Texture" id=2]
+[ext_resource path="res://ui/Silver.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://ui/stats/stats_ui.gd" type="Script" id=4]
+[ext_resource path="res://assets/icons/cross-hair.png" type="Texture" id=5]
+[ext_resource path="res://assets/icons/ui_dash_ready.png" type="Texture" id=6]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.47451, 0.0901961, 0.0901961, 1 )
+border_width_top = 3
+border_width_bottom = 3
+border_color = Color( 0.67451, 0.196078, 0.196078, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.47, 0.0893, 0.0893, 0.0980392 )
+border_width_top = 3
+border_width_bottom = 3
+border_color = Color( 0.67451, 0.196078, 0.196078, 1 )
+anti_aliasing = false
+
+[sub_resource type="DynamicFont" id=4]
+size = 75
+outline_size = 3
+outline_color = Color( 0.67451, 0.196078, 0.196078, 1 )
+extra_spacing_bottom = -20
+font_data = ExtResource( 3 )
+
+[sub_resource type="Theme" id=5]
+default_font = SubResource( 4 )
+
+[node name="StatsUi" type="Control" groups=[
+"stats_root",
+]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="crosshairs" type="Panel" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -100.0
+margin_right = 100.0
+margin_bottom = 100.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="health" type="Control" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -300.0
+margin_right = 300.0
+margin_bottom = 80.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="health"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_top = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="health/MarginContainer"]
+margin_top = 10.0
+margin_right = 600.0
+margin_bottom = 94.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="health" type="HBoxContainer" parent="health/MarginContainer/VBoxContainer"]
+margin_right = 600.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="front_ticks" type="TextureRect" parent="health/MarginContainer/VBoxContainer/health"]
+margin_right = 50.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBar" type="ProgressBar" parent="health/MarginContainer/VBoxContainer/health"]
+margin_left = 54.0
+margin_right = 546.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.0
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
+value = 35.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="back_ticks" type="TextureRect" parent="health/MarginContainer/VBoxContainer/health"]
+margin_left = 550.0
+margin_right = 600.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+flip_v = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tanks" type="MarginContainer" parent="health/MarginContainer/VBoxContainer"]
+margin_top = 54.0
+margin_right = 600.0
+margin_bottom = 84.0
+custom_constants/margin_right = 55
+custom_constants/margin_left = 55
+
+[node name="tanks" type="HBoxContainer" parent="health/MarginContainer/VBoxContainer/tanks"]
+margin_left = 55.0
+margin_right = 545.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 0, 30 )
+size_flags_horizontal = 3
+size_flags_vertical = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="collectables" type="Control" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 0.8
+margin_left = -150.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="collectables"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="artifacts" type="MarginContainer" parent="collectables/VBoxContainer"]
+margin_left = 12.0
+margin_right = 137.0
+margin_bottom = 233.0
+size_flags_horizontal = 4
+custom_constants/margin_top = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="collectables/VBoxContainer/artifacts"]
+margin_top = 20.0
+margin_right = 125.0
+margin_bottom = 213.0
+size_flags_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="collectables/VBoxContainer/artifacts/VBoxContainer"]
+margin_right = 125.0
+margin_bottom = 125.0
+rect_min_size = Vector2( 125, 125 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="collectables/VBoxContainer/artifacts/VBoxContainer"]
+margin_top = 129.0
+margin_right = 125.0
+margin_bottom = 193.0
+size_flags_vertical = 0
+theme = SubResource( 5 )
+text = "50"
+align = 1
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dash_charges" type="TextureRect" parent="collectables/VBoxContainer"]
+margin_left = 20.0
+margin_top = 237.0
+margin_right = 130.0
+margin_bottom = 347.0
+rect_min_size = Vector2( 110, 110 )
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="selectables" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 760.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="selectables"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="actions" type="MarginContainer" parent="selectables/HBoxContainer"]
+margin_top = 100.0
+margin_right = 598.0
+margin_bottom = 140.0
+size_flags_horizontal = 3
+size_flags_vertical = 8
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="action_list" type="HBoxContainer" parent="selectables/HBoxContainer/actions"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 578.0
+margin_bottom = 20.0
+size_flags_vertical = 4
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="guns" type="MarginContainer" parent="selectables/HBoxContainer"]
+margin_left = 602.0
+margin_top = 100.0
+margin_right = 1200.0
+margin_bottom = 140.0
+size_flags_horizontal = 3
+size_flags_vertical = 8
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="gun_list" type="HBoxContainer" parent="selectables/HBoxContainer/guns"]
+margin_left = 578.0
+margin_top = 20.0
+margin_right = 578.0
+margin_bottom = 20.0
+size_flags_horizontal = 8
+size_flags_vertical = 4
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}

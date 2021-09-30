@@ -1,0 +1,26 @@
+[remap]
+
+importer="aseprite.wizard.plugin"
+type="SpriteFrames"
+path="res://.import/dash-icon.aseprite-35e62f91fa8dea7d0787eea41618eac9.res"
+
+[deps]
+
+source_file="res://assets/icons/dash-icon.aseprite"
+dest_files=[ "res://.import/dash-icon.aseprite-35e62f91fa8dea7d0787eea41618eac9.res" ]
+
+[params]
+
+split_layers=false
+exclude_layers_pattern=""
+only_visible_layers=false
+trim_images=false
+sprite_filename_pattern="{basename}.{layer}.{extension}"
+texture_strip/import_texture_strip=false
+texture_strip/filename_pattern="{basename}.{layer}.Strip.{extension}"
+texture_atlas/import_texture_atlas=false
+texture_atlas/filename_pattern="{basename}.{layer}.Atlas.{extension}"
+texture_atlas/frame_filename_pattern="{basename}.{layer}.{animation}.{frame}.Atlas.{extension}"
+animated_texture/import_animated_texture=false
+animated_texture/filename_pattern="{basename}.{layer}.{animation}.Texture.{extension}"
+animated_texture/frame_filename_pattern="{basename}.{layer}.{animation}.{frame}.Texture.{extension}"

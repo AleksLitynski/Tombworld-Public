@@ -1,0 +1,49 @@
+{ "frames": [
+   {
+    "filename": "scangun_shooty 0.aseprite",
+    "frame": { "x": 0, "y": 0, "w": 200, "h": 150 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 200, "h": 150 },
+    "sourceSize": { "w": 200, "h": 150 },
+    "duration": 100
+   },
+   {
+    "filename": "scangun_shooty 1.aseprite",
+    "frame": { "x": 200, "y": 0, "w": 200, "h": 150 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 200, "h": 150 },
+    "sourceSize": { "w": 200, "h": 150 },
+    "duration": 100
+   },
+   {
+    "filename": "scangun_shooty 2.aseprite",
+    "frame": { "x": 400, "y": 0, "w": 200, "h": 150 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 200, "h": 150 },
+    "sourceSize": { "w": 200, "h": 150 },
+    "duration": 100
+   },
+   {
+    "filename": "scangun_shooty 3.aseprite",
+    "frame": { "x": 600, "y": 0, "w": 200, "h": 150 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 200, "h": 150 },
+    "sourceSize": { "w": 200, "h": 150 },
+    "duration": 100
+   }
+ ],
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.2.28-x64",
+  "image": "scangun_shooty.png",
+  "format": "RGBA8888",
+  "size": { "w": 800, "h": 150 },
+  "scale": "1",
+  "frameTags": [
+  ]
+ }
+}

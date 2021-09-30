@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/entities/chain.aseprite" type="SpriteFrames" id=1]
+
+[node name="chain_sprite" type="AnimatedSprite3D"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.160819, 0 )
+billboard = 2
+frames = ExtResource( 1 )

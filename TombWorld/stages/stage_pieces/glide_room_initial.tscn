@@ -1,0 +1,607 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="CylinderMesh" id=1]
+
+[sub_resource type="CylinderShape" id=2]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="move_cylinder_27" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 4.60002, -0.726208, -0.562108 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_27"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_27"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_28" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 4.60002, -3.11501, -0.562108 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_28"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_28"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_47" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 4.60002, -0.726208, -2.21262 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_47"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_47"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_48" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 4.60002, -3.11501, -2.21262 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_48"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_48"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_51" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 4.60002, -0.726208, -3.77314 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_51"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_51"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_52" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 4.60002, -3.11501, -3.77314 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_52"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_52"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_71" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 0.875172, -0.726208, -3.77314 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_71"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_71"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_72" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 0.875172, -3.11501, -3.77314 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_72"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_72"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_73" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, -0.712514, -0.726208, -3.77314 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_73"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_73"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_74" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, -0.712514, -3.11501, -3.77314 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_74"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_74"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_75" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, -2.35631, -0.726208, -3.77314 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_75"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_75"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_76" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, -2.35631, -3.11501, -3.77314 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_76"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_76"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_77" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, -3.99944, -0.726208, -3.77314 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_77"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_77"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_78" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, -3.99944, -3.11501, -3.77314 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_78"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_78"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_79" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, -5.60466, -0.726208, -3.77314 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_79"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_79"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_80" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, -5.60466, -3.11501, -3.77314 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_80"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_80"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_81" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, -5.60466, -0.726208, -0.435575 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_81"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_81"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_82" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, -5.60466, -3.11501, -0.435575 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_82"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_82"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_83" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, -7.04683, -0.726208, -0.435575 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_83"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_83"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_84" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, -7.04683, -3.11501, -0.435575 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_84"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_84"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_85" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, -8.67726, -0.726208, -0.435575 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_85"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_85"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_86" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, -8.67726, -3.11501, -0.435575 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_86"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_86"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_87" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, -10.3076, -0.726208, -0.435575 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_87"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_87"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_88" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, -10.3076, -3.11501, -0.435575 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_88"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_88"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_89" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, -10.3076, -0.726208, 4.80896 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_89"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_89"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_90" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, -10.3076, -3.11501, 4.80896 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_90"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_90"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_95" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, -10.3076, -0.726208, 6.01601 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_95"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_95"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_96" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, -10.3076, -3.11501, 6.01601 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_96"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_96"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_91" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, -10.3076, -0.726208, 3.40617 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_91"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_91"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_92" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, -10.3076, -3.11501, 3.40617 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_92"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_92"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_49" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 20.0287, -0.726208, 0.273293 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_49"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_49"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_50" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 20.0287, -3.11501, 0.273289 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_50"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_50"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_93" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 21.4133, -0.726208, 0.273293 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_93"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_93"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_94" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 21.4133, -3.11501, 0.273289 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_94"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_94"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_53" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 18.3635, -0.726208, 0.273293 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_53"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_53"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_54" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 18.3635, -3.11501, 0.273289 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_54"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_54"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_55" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 16.723, -0.726208, 0.273293 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_55"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_55"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_56" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 16.723, -3.11501, 0.273289 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_56"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_56"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_97" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 20.0287, -0.726208, 0.273293 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_97"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_97"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_98" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 20.0287, -3.11501, 0.273289 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_98"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_98"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_99" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 21.4133, -0.726208, 0.273293 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_99"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_99"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_100" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 21.4133, -3.11501, 0.273289 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_100"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_100"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_101" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 18.3635, -0.726208, 0.273293 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_101"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_101"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_102" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 18.3635, -3.11501, 0.273289 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_102"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_102"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_103" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 16.723, -0.726208, 0.273293 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_103"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_103"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_104" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 16.723, -3.11501, 0.273289 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_104"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_104"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_57" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 16.723, -0.726208, 4.51085 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_57"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_57"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_58" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 16.723, -3.11501, 4.51084 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_58"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_58"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_59" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 15.0415, -0.726208, 4.51085 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_59"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_59"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_60" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 15.0415, -3.11501, 4.51084 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_60"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_60"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_63" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 9.05612, -0.726208, 4.51085 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_63"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_63"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_64" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 9.05612, -3.11501, 4.51084 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_64"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_64"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_65" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 9.05612, -0.726208, 2.9406 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_65"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_65"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_66" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 9.05612, -3.11501, 2.9406 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_66"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_66"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_67" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 9.05612, -0.726208, 1.26185 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_67"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_67"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_68" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 9.05612, -3.11501, 1.26184 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_68"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_68"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_69" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 9.05612, -0.726208, -0.281613 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_69"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_69"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_70" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 9.05612, -3.11501, -0.281616 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_70"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_70"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_61" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 13.3582, -0.726208, 4.51085 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_61"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_61"]
+shape = SubResource( 2 )
+
+[node name="move_cylinder_62" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.25381, 0, 0, 0, 1, 13.3582, -3.11501, 4.51084 )
+
+[node name="MeshInstance" type="MeshInstance" parent="move_cylinder_62"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="move_cylinder_62"]
+shape = SubResource( 2 )

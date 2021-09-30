@@ -1,0 +1,77 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://utils/debug.gd" type="Script" id=2]
+[ext_resource path="res://ui/text_theme_small.tres" type="Theme" id=3]
+
+[node name="Debug" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HSplitContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Persists" type="ScrollContainer" parent="HBoxContainer"]
+margin_right = 594.0
+margin_bottom = 900.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="items" type="VBoxContainer" parent="HBoxContainer/Persists"]
+mouse_filter = 2
+
+[node name="Logs" type="ScrollContainer" parent="HBoxContainer"]
+margin_left = 606.0
+margin_right = 1200.0
+margin_bottom = 900.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="items" type="VBoxContainer" parent="HBoxContainer/Logs"]
+mouse_filter = 2
+
+[node name="show_debug" type="CheckBox" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -133.572
+margin_top = 1.12245
+margin_right = -4.57178
+margin_bottom = 25.1225
+rect_pivot_offset = Vector2( 82.3025, 45.4363 )
+theme = ExtResource( 3 )
+text = "[U] Show Debug?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="noclip" type="CheckBox" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -133.572
+margin_top = 21.3268
+margin_right = -23.5718
+margin_bottom = 45.3268
+rect_pivot_offset = Vector2( 82.3025, 45.4363 )
+theme = ExtResource( 3 )
+text = "[J] No Clip?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
